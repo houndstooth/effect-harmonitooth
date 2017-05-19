@@ -1,3 +1,3 @@
 import tile from '../../shared/components/tile'
 
-export default ({x, y, options}) => tile({x, y, stripeCount: options.stripeCount})
+export default ({ origin, options }) => tile({ origin, stripeCount: options.stripeCount })
