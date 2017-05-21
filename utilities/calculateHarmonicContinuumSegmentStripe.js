@@ -2,8 +2,8 @@ import inverseTriangularNumber from '../../shared/utilities/inverseTriangularNum
 import triangularNumber from '../../shared/utilities/triangularNumber'
 
 export default ({ stripeCount, stripeIndex }) => {
-	const tri = triangularNumber(stripeCount - 1)
-	const previous = inverseTriangularNumber(tri)
+    const previous = stripeCount - 1
+	const tri = triangularNumber(previous)
 	const current = inverseTriangularNumber(tri + stripeIndex)
 	return current - previous
 }
