@@ -1,4 +1,4 @@
-import triangularNumbers from '../shared/utilities/triangularNumbers'
+import triangularNumbers from './triangularNumbers'
 
 export default ({ stripeCount, stripeIndex }) => {
 	const { triangularRoot } = triangularNumbers
