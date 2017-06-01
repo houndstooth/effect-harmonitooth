@@ -1,8 +1,8 @@
 export default {
 	state: {
 		shared: {
-			stripeCount: {
-				baseCount: 1
+			stripeCountConfig: {
+				stripeCount: 1
 			},
 			stripeStyle: 'FULL_HARMONIC_CONTINUUM_COMPRESSED_INTO_SINGLE_TILE'
 		}
@@ -10,8 +10,8 @@ export default {
 	iterations: {},
 	animations: {
 		shared: {
-			stripeCount: {
-				baseCount: p => p * 1.005
+			stripeCountConfig: {
+				stripeCount: p => p * 1.005
 			}
 		}
 	}
