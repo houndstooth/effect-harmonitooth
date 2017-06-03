@@ -1,3 +1,5 @@
+import { ANIMATION_RATE } from '../shared/application/constants'
+
 export default {
 	state: {
 		stripeCountConfig: {
@@ -8,7 +10,7 @@ export default {
 	iterations: {},
 	animations: {
 		stripeCountConfig: {
-			stripeCount: p => p * 1.005
+			stripeCount: p => p * ANIMATION_RATE
 		}
 	}
 }
