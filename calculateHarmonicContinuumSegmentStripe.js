@@ -1,4 +1,4 @@
-import mathUtilities from '../shared/utilities/mathUtilities'
+import mathUtilities from '../../utilities/mathUtilities'
 
 export default ({ stripeCount, stripeIndex }) => {
 	const { triangularNumber, triangularRoot } = mathUtilities
