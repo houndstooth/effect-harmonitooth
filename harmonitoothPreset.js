@@ -1,11 +1,12 @@
 import { ANIMATION_RATE } from '../../application/constants'
+import getHarmonicContinuumStripePositions from './getHarmonicContinuumStripePositions'
 
 export default {
 	state: {
 		stripeCountConfig: {
 			stripeCount: 1
 		},
-		stripeStyle: 'FULL_HARMONIC_CONTINUUM_COMPRESSED_INTO_SINGLE_TILE'
+		getStripePositions: getHarmonicContinuumStripePositions
 	},
 	animations: {
 		stripeCountConfig: {
