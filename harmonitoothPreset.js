@@ -1,7 +1,5 @@
 import { ANIMATION_RATE } from '../../application/constants'
 import getHarmonicContinuumStripePositions from './getHarmonicContinuumStripePositions'
-import state from '../../state/state'
-import currentAnimation from '../../state/currentAnimation'
 
 export default {
 	state: {
@@ -12,7 +10,7 @@ export default {
 	},
 	animations: {
 		stripeCountConfig: {
-			stripeCount: () => state.stripeCountConfig.stripeCount * Math.pow(ANIMATION_RATE, currentAnimation.i)
+			stripeCount: p => p * ANIMATION_RATE
 		}
 	}
 }
