@@ -1,4 +1,4 @@
-import { ANIMATION_RATE } from '../../application/constants'
+import { ANIMATION_RATE } from '../../constants'
 import getHarmonicContinuumStripePositions from './getHarmonicContinuumStripePositions'
 
 export default {
