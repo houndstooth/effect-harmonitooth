@@ -2,7 +2,7 @@ import { ANIMATION_RATE } from '../../constants'
 import getHarmonicContinuumStripePositions from './getHarmonicContinuumStripePositions'
 
 export default {
-	state: {
+	initial: {
 		stripeCountConfig: {
 			stripeCount: 1
 		},
