@@ -1,5 +1,5 @@
-import mathUtilities from '../../src/utilities/mathUtilities'
-import stripeUtilities from '../../src/utilities/stripeUtilities'
+import mathUtilities from '../../../../src/utilities/mathUtilities'
+import stripeUtilities from '../../../../src/utilities/stripeUtilities'
 
 export default () => stripeUtilities.perStripe({ getStripePosition: harmonicContinuumStripePosition })
 
