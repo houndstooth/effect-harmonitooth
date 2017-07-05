@@ -3,13 +3,13 @@ import getHarmonicContinuumStripePositions from '../src/utilities/getHarmonicCon
 
 export default {
 	initial: {
-		stripeCountConfig: {
+		stripeCountSettings: {
 			stripeCount: 1,
 		},
 		getStripePositions: getHarmonicContinuumStripePositions,
 	},
 	animations: {
-		stripeCountConfig: {
+		stripeCountSettings: {
 			stripeCount: p => p * ANIMATION_RATE,
 		},
 	},
