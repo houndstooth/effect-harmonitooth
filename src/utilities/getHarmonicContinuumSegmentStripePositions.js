@@ -3,7 +3,7 @@ import stripeUtilities from '../../../../src/utilities/stripeUtilities'
 
 export default () => stripeUtilities.perStripe({ getStripePosition: harmonicContinuumSegmentStripePosition })
 
-const harmonicContinuumSegmentStripePosition =  ({ stripeCount, stripeIndex }) => {
+const harmonicContinuumSegmentStripePosition = ({ stripeCount, stripeIndex }) => {
 	const { triangularNumber, triangularRoot } = mathUtilities
 	const previous = stripeCount - 1
 	const tri = triangularNumber(previous)
