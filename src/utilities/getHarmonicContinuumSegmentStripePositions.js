@@ -5,8 +5,8 @@ export default () => stripeUtilities.perStripe({ getStripePosition: harmonicCont
 
 const harmonicContinuumSegmentStripePosition = ({ stripeCount, stripeIndex }) => {
 	const { triangularNumber, triangularRoot } = mathUtilities
-	const previous = stripeCount - 1
-	const tri = triangularNumber(previous)
-	const current = triangularRoot(tri + stripeIndex)
-	return current - previous
+	const previousStripePosition = stripeCount - 1
+	const previousStripePositionIndex = triangularNumber(previousStripePosition)
+	const currentStripePosition = triangularRoot(previousStripePositionIndex + stripeIndex)
+	return currentStripePosition - previousStripePosition
 }
