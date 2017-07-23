@@ -5,7 +5,7 @@ export default {
 	basePattern: {
 		stripeSettings: {
 			stripePositionSettings: {
-				stripeCount: 1,
+				stripeCountSetting: 1,
 			},
 		},
 		getStripePositions: getHarmonicContinuumStripePositions,
@@ -13,7 +13,7 @@ export default {
 	animationsPattern: {
 		stripeSettings: {
 			stripePositionSettings: {
-				stripeCount: p => p * ANIMATION_RATE,
+				stripeCountSetting: p => p * ANIMATION_RATE,
 			},
 		},
 	},
