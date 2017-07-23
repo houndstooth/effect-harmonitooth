@@ -2,13 +2,13 @@ import { ANIMATION_RATE } from '../../../src/constants'
 import getHarmonicContinuumStripePositions from '../src/utilities/getHarmonicContinuumStripePositions'
 
 export default {
-	base: {
+	basePattern: {
 		stripeCountSettings: {
 			stripeCount: 1,
 		},
 		getStripePositions: getHarmonicContinuumStripePositions,
 	},
-	animations: {
+	animationsPattern: {
 		stripeCountSettings: {
 			stripeCount: p => p * ANIMATION_RATE,
 		},
