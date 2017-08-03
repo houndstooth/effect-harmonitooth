@@ -33,8 +33,9 @@ describe('harmonitooth effect', () => {
 		houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(0)
 		composeMainHoundstooth({ houndstoothEffects: [ harmonitoothEffect ], houndstoothOverrides })
 		activateTestMarkerCanvas()
+		store.animating = true
 
-		execute({ animating: true })
+		execute()
 
 		expectWholeTile(TRANSPARENT, [ 0, 0 ])
 		expectWholeTile(TRANSPARENT, [ 1, 0 ])
@@ -47,8 +48,9 @@ describe('harmonitooth effect', () => {
 		houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(500)
 		composeMainHoundstooth({ houndstoothEffects: [ harmonitoothEffect ], houndstoothOverrides })
 		activateTestMarkerCanvas()
+		store.animating = true
 
-		execute({ animating: true })
+		execute()
 
 		expectHarmonicStripedTile(2, TRANSPARENT, 0)
 		expectHarmonicStripedTile(2, BLACK, 1)
@@ -61,8 +63,9 @@ describe('harmonitooth effect', () => {
 		houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(650)
 		composeMainHoundstooth({ houndstoothEffects: [ harmonitoothEffect ], houndstoothOverrides })
 		activateTestMarkerCanvas()
+		store.animating = true
 
-		execute({ animating: true })
+		execute()
 
 		expectHarmonicStripedTile(3, TRANSPARENT, 0)
 		expectHarmonicStripedTile(3, BLACK, 1)
@@ -75,8 +78,9 @@ describe('harmonitooth effect', () => {
 		houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(750)
 		composeMainHoundstooth({ houndstoothEffects: [ harmonitoothEffect ], houndstoothOverrides })
 		activateTestMarkerCanvas()
+		store.animating = true
 
-		execute({ animating: true })
+		execute()
 
 		expectHarmonicStripedTile(4, TRANSPARENT, 0)
 		expectHarmonicStripedTile(4, BLACK, 1)
@@ -89,8 +93,9 @@ describe('harmonitooth effect', () => {
 		houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(800)
 		composeMainHoundstooth({ houndstoothEffects: [ harmonitoothEffect ], houndstoothOverrides })
 		activateTestMarkerCanvas()
+		store.animating = true
 
-		execute({ animating: true })
+		execute()
 
 		expectHarmonicStripedTile(5, TRANSPARENT, 0)
 		expectHarmonicStripedTile(5, BLACK, 1)
