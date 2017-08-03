@@ -15,7 +15,7 @@ describe('harmonitooth effect', () => {
 			gridSettings: { gridSize: 2 },
 			viewSettings: { canvasSize: 100 },
 			tileSettings: { tileSizeSetting: 50 },
-		}
+		},
 	}
 
 	let thisAnimationFrameOnly
@@ -117,7 +117,7 @@ const harmonicStripeCenter = (index, total, address) => {
 }
 
 const expectWholeTile = (color, address) => {
-	codeUtilities.iterator(12).forEach(check => {
-		pixelIsColorWithMarker([ 50 * (address[ 0 ] + (check / 12)), 50 * (address[ 1 ] + (check / 12)) ], color, check)
-	})
+	codeUtilities.iterator(12).forEach(check => expect(
+		pixelIsColorWithMarker([ 50 * (address[ 0 ] + (check / 12)), 50 * (address[ 1 ] + (check / 12)) ], color, check),
+	).toBe(true))
 }
