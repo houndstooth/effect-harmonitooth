@@ -1,6 +1,6 @@
 import getHarmonicContinuumStripePositions from '../../../src/utilities/getHarmonicContinuumStripePositions'
 import store from '../../../../../store'
-import resetStore from '../../../../../test/helpers/resetStore'
+import resetStore from '../../../../../src/store/resetStore'
 import composeMainHoundstooth from '../../../../../src/store/composeMainHoundstooth'
 
 describe('get harmonic continuum stripe positions', () => {

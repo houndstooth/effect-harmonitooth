@@ -6,7 +6,7 @@ import activateTestMarkerCanvas from '../../../../test/integration/helpers/activ
 import { BLACK, TRANSPARENT } from '../../../../src/constants'
 import codeUtilities from '../../../../src/utilities/codeUtilities'
 import store from '../../../../store'
-import resetStore from '../../../../test/helpers/resetStore'
+import resetStore from '../../../../src/store/resetStore'
 import thisFrameOnly from '../../../../test/integration/helpers/thisFrameOnly'
 
 describe('harmonitooth effect', () => {
