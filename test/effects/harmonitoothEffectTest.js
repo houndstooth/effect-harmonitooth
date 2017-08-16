@@ -122,7 +122,8 @@ const harmonicStripeCenter = (index, total, address) => {
 }
 
 const expectWholeTile = (color, address) => {
-	codeUtilities.iterator(12).forEach(check => expect(
-		pixelIsColorWithMarker([ 50 * (address[ 0 ] + (check / 12)), 50 * (address[ 1 ] + (check / 12)) ], color, check),
-	).toBe(true))
+	codeUtilities.iterator(12).forEach(check => {
+		const coordinate = [ 50 * (address[ 0 ] + (check / 12)), 50 * (address[ 1 ] + (check / 12)) ]
+		expect(pixelIsColorWithMarker(coordinate, color, check)).toBe(true)
+	})
 }
