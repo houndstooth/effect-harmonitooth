@@ -1,6 +1,6 @@
 import harmonitoothEffect from '../../effects/harmonitoothEffect'
 import pixelIsColorWithMarker from '../../../../test/integration/helpers/pixelIsColorWithMarker'
-import executeSelectedHoundstoothEffects from '../../../../src/interface/executeSelectedHoundstoothEffects'
+import executeSelectedHoundstoothEffects from '../../../../src/controls/executeSelectedHoundstoothEffects'
 import activateTestMarkerCanvas from '../../../../test/integration/helpers/activateTestMarkerCanvas'
 import { BLACK, TRANSPARENT } from '../../../../src/constants'
 import codeUtilities from '../../../../src/utilities/codeUtilities'
