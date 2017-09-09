@@ -7,6 +7,7 @@ import codeUtilities from '../../../../src/utilities/codeUtilities'
 import store from '../../../../store'
 import resetStore from '../../../../src/store/resetStore'
 import thisFrameOnly from '../../../../test/integration/helpers/thisFrameOnly'
+import animation from '../../../../src/animation'
 
 describe('harmonitooth effect', () => {
 	const harmonitoothTestHoundstoothOverrides = {
@@ -21,10 +22,9 @@ describe('harmonitooth effect', () => {
 	beforeEach(() => {
 		thisAnimationFrameOnly = thisFrameOnly.thisAnimationFrameOnly
 		resetStore(store)
-		const animatorSpy = jasmine.createSpy().and.callFake(({ animationFunction, stopCondition }) => {
+		spyOn(animation, 'animator').and.callFake(({ animationFunction, stopCondition }) => {
 			while (!stopCondition()) animationFunction()
 		})
-		executeSelectedHoundstoothEffects.__Rewire__('animator', animatorSpy)
 	})
 
 	it('at frame 0, the striped squares have only a single stripe, so are solid', () => {
