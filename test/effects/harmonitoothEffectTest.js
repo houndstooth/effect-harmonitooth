@@ -4,8 +4,8 @@ import executeSelectedHoundstoothEffects from '../../../../src/execute/executeSe
 import activateTestMarkerCanvas from '../../../../test/integration/helpers/activateTestMarkerCanvas'
 import { BLACK, TRANSPARENT } from '../../../../src/constants'
 import codeUtilities from '../../../../src/utilities/codeUtilities'
-import store from '../../../../store'
-import resetStore from '../../../../src/store/resetStore'
+import state from '../../../../state'
+import resetState from '../../../../src/store/resetState'
 import thisFrameOnly from '../../../../test/integration/helpers/thisFrameOnly'
 import animation from '../../../../src/animation'
 
@@ -21,7 +21,7 @@ describe('harmonitooth effect', () => {
 	let thisAnimationFrameOnly
 	beforeEach(() => {
 		thisAnimationFrameOnly = thisFrameOnly.thisAnimationFrameOnly
-		resetStore(store)
+		resetState(state)
 		spyOn(animation, 'animator').and.callFake(({ animationFunction, stopCondition }) => {
 			while (!stopCondition()) animationFunction()
 		})
@@ -30,9 +30,9 @@ describe('harmonitooth effect', () => {
 	it('at frame 0, the striped squares have only a single stripe, so are solid', () => {
 		const houndstoothOverrides = codeUtilities.deepClone(harmonitoothTestHoundstoothOverrides)
 		houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(0)
-		store.selectedHoundstoothEffects = [ harmonitoothEffect ]
+		state.selectedHoundstoothEffects = [ harmonitoothEffect ]
 		activateTestMarkerCanvas()
-		store.animating = true
+		state.animating = true
 
 		executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
@@ -45,9 +45,9 @@ describe('harmonitooth effect', () => {
 	it('around frame 500, it has two harmonically proportioned stripes', () => {
 		const houndstoothOverrides = codeUtilities.deepClone(harmonitoothTestHoundstoothOverrides)
 		houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(500)
-		store.selectedHoundstoothEffects = [ harmonitoothEffect ]
+		state.selectedHoundstoothEffects = [ harmonitoothEffect ]
 		activateTestMarkerCanvas()
-		store.animating = true
+		state.animating = true
 
 		executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
@@ -60,9 +60,9 @@ describe('harmonitooth effect', () => {
 	it('around frame 650, it has three harmonically proportioned stripes', () => {
 		const houndstoothOverrides = codeUtilities.deepClone(harmonitoothTestHoundstoothOverrides)
 		houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(650)
-		store.selectedHoundstoothEffects = [ harmonitoothEffect ]
+		state.selectedHoundstoothEffects = [ harmonitoothEffect ]
 		activateTestMarkerCanvas()
-		store.animating = true
+		state.animating = true
 
 		executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
@@ -75,9 +75,9 @@ describe('harmonitooth effect', () => {
 	it('around frame 750, it has four harmonically proportioned stripes', () => {
 		const houndstoothOverrides = codeUtilities.deepClone(harmonitoothTestHoundstoothOverrides)
 		houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(750)
-		store.selectedHoundstoothEffects = [ harmonitoothEffect ]
+		state.selectedHoundstoothEffects = [ harmonitoothEffect ]
 		activateTestMarkerCanvas()
-		store.animating = true
+		state.animating = true
 
 		executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
@@ -90,9 +90,9 @@ describe('harmonitooth effect', () => {
 	it('around frame 800, it has two harmonically proportioned stripes', () => {
 		const houndstoothOverrides = codeUtilities.deepClone(harmonitoothTestHoundstoothOverrides)
 		houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(800)
-		store.selectedHoundstoothEffects = [ harmonitoothEffect ]
+		state.selectedHoundstoothEffects = [ harmonitoothEffect ]
 		activateTestMarkerCanvas()
-		store.animating = true
+		state.animating = true
 
 		executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
