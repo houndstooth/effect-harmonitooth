@@ -1,5 +1,5 @@
 import src from '../../../src'
-import getHarmonicContinuumStripePositions from '../src/utilities/getHarmonicContinuumStripePositions'
+import harmonitoothSrc from '../src'
 
 export default {
 	name: 'harmonitooth',
@@ -7,7 +7,7 @@ export default {
 		stripeSettings: {
 			stripePositionSettings: {
 				stripeCountSetting: 1,
-				getStripePositions: getHarmonicContinuumStripePositions,
+				getStripePositions: harmonitoothSrc.getHarmonicContinuumStripePositions,
 			},
 		},
 	},

@@ -1,4 +1,4 @@
-import getHarmonicContinuumSegmentStripePositions from '../../../src/utilities/getHarmonicContinuumSegmentStripePositions'
+import getHarmonicContinuumSegmentStripePositions from '../../../src/components/getHarmonicContinuumSegmentStripePositions'
 import state from '../../../../../state'
 import resetState from '../../../../../src/store/resetState'
 import composeMainHoundstooth from '../../../../../src/execute/composeMainHoundstooth'
