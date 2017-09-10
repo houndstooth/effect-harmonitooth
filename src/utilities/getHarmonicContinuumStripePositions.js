@@ -1,7 +1,7 @@
 import mathUtilities from '../../../../src/utilities/mathUtilities'
-import perStripe from '../../../../src/components/perStripe'
+import src from '../../../../src'
 
-export default () => perStripe({ getStripePosition: harmonicContinuumStripePosition })
+export default () => src.perStripe({ getStripePosition: harmonicContinuumStripePosition })
 
 const harmonicContinuumStripePosition = ({ stripeIndex, stripeCount }) => {
 	const { triangularRoot } = mathUtilities
