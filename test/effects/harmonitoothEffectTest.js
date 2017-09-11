@@ -22,8 +22,8 @@ describe('harmonitooth effect', () => {
 	beforeEach(() => {
 		thisAnimationFrameOnly = thisFrameOnly.thisAnimationFrameOnly
 		resetState(state)
-		spyOn(animation, 'animator').and.callFake(({ animationFunction, stopCondition }) => {
-			while (!stopCondition()) animationFunction()
+		spyOn(animation, 'animator').and.callFake(({ animationFunction, stopConditionFunction }) => {
+			while (!stopConditionFunction()) animationFunction()
 		})
 	})
 
