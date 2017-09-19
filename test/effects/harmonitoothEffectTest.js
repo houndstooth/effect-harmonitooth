@@ -3,7 +3,7 @@ import pixelIsColorWithMarker from '../../../../test/integration/helpers/pixelIs
 import executeSelectedHoundstoothEffects from '../../../../src/execute/executeSelectedHoundstoothEffects'
 import activateTestMarkerCanvas from '../../../../test/integration/helpers/activateTestMarkerCanvas'
 import { BLACK, TRANSPARENT } from '../../../../src/constants'
-import codeUtilities from '../../../../src/utilities/codeUtilities'
+import { deepClone, iterator } from '../../../../src/utilities/codeUtilities'
 import state from '../../../../state'
 import resetState from '../../../../src/store/resetState'
 import thisFrameOnly from '../../../../test/integration/helpers/thisFrameOnly'
@@ -28,7 +28,7 @@ describe('harmonitooth effect', () => {
 	})
 
 	it('at frame 0, the striped squares have only a single stripe, so are solid', () => {
-		const houndstoothOverrides = codeUtilities.deepClone(harmonitoothTestHoundstoothOverrides)
+		const houndstoothOverrides = deepClone(harmonitoothTestHoundstoothOverrides)
 		houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(0)
 		state.selectedHoundstoothEffects = [ harmonitoothEffect ]
 		activateTestMarkerCanvas()
@@ -43,7 +43,7 @@ describe('harmonitooth effect', () => {
 	})
 
 	it('around frame 500, it has two harmonically proportioned stripes', () => {
-		const houndstoothOverrides = codeUtilities.deepClone(harmonitoothTestHoundstoothOverrides)
+		const houndstoothOverrides = deepClone(harmonitoothTestHoundstoothOverrides)
 		houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(500)
 		state.selectedHoundstoothEffects = [ harmonitoothEffect ]
 		activateTestMarkerCanvas()
@@ -58,7 +58,7 @@ describe('harmonitooth effect', () => {
 	})
 
 	it('around frame 650, it has three harmonically proportioned stripes', () => {
-		const houndstoothOverrides = codeUtilities.deepClone(harmonitoothTestHoundstoothOverrides)
+		const houndstoothOverrides = deepClone(harmonitoothTestHoundstoothOverrides)
 		houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(650)
 		state.selectedHoundstoothEffects = [ harmonitoothEffect ]
 		activateTestMarkerCanvas()
@@ -73,7 +73,7 @@ describe('harmonitooth effect', () => {
 	})
 
 	it('around frame 750, it has four harmonically proportioned stripes', () => {
-		const houndstoothOverrides = codeUtilities.deepClone(harmonitoothTestHoundstoothOverrides)
+		const houndstoothOverrides = deepClone(harmonitoothTestHoundstoothOverrides)
 		houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(750)
 		state.selectedHoundstoothEffects = [ harmonitoothEffect ]
 		activateTestMarkerCanvas()
@@ -88,7 +88,7 @@ describe('harmonitooth effect', () => {
 	})
 
 	it('around frame 800, it has two harmonically proportioned stripes', () => {
-		const houndstoothOverrides = codeUtilities.deepClone(harmonitoothTestHoundstoothOverrides)
+		const houndstoothOverrides = deepClone(harmonitoothTestHoundstoothOverrides)
 		houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(800)
 		state.selectedHoundstoothEffects = [ harmonitoothEffect ]
 		activateTestMarkerCanvas()
@@ -104,7 +104,7 @@ describe('harmonitooth effect', () => {
 })
 
 const expectHarmonicStripedTile = (stripeCount, color, addressCoordinate) => {
-	codeUtilities.iterator(stripeCount, { oneIndexed: true }).forEach(stripe => {
+	iterator(stripeCount, { oneIndexed: true }).forEach(stripe => {
 		const expectedColor = stripe % 2 === 1 ? color : color === BLACK ? TRANSPARENT : BLACK
 		const harmonicPixel = harmonicStripeCenter(stripe, stripeCount, addressCoordinate)
 		expect(pixelIsColorWithMarker(harmonicPixel, expectedColor, stripe)).toBe(true)
@@ -112,8 +112,8 @@ const expectHarmonicStripedTile = (stripeCount, color, addressCoordinate) => {
 }
 
 const harmonicStripeCenter = (index, total, address) => {
-	const fullProportions = codeUtilities.iterator(total).reduce((sum, val) => sum + 1 / (val + 2), 0)
-	const thisProportion = codeUtilities.iterator(index).reduce((sum, val) => sum + 1 / (val + 2), 0)
+	const fullProportions = iterator(total).reduce((sum, val) => sum + 1 / (val + 2), 0)
+	const thisProportion = iterator(index).reduce((sum, val) => sum + 1 / (val + 2), 0)
 	const adjustForHalf = 1 / ((index + 2) * 2)
 	const coordinate = (thisProportion - adjustForHalf) / fullProportions
 	const coordinateScaledAndTransposed = (address + coordinate) * 50
@@ -121,7 +121,7 @@ const harmonicStripeCenter = (index, total, address) => {
 }
 
 const expectWholeTile = (color, address) => {
-	codeUtilities.iterator(12).forEach(check => {
+	iterator(12).forEach(check => {
 		const coordinate = [ 50 * (address[ 0 ] + (check / 12)), 50 * (address[ 1 ] + (check / 12)) ]
 		expect(pixelIsColorWithMarker(coordinate, color, check)).toBe(true)
 	})
