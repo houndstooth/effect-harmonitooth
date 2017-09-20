@@ -1,4 +1,4 @@
-import src from '../../../src'
+import { standardAnimation } from '../../../src'
 import harmonitoothSrc from '../src'
 
 export default {
@@ -14,7 +14,7 @@ export default {
 	animationsPattern: {
 		stripeSettings: {
 			stripePositionSettings: {
-				stripeCountSetting: src.standardAnimation,
+				stripeCountSetting: standardAnimation,
 			},
 		},
 	},
