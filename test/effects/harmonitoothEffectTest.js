@@ -7,7 +7,7 @@ import { deepClone, iterator } from '../../../../src/utilities/codeUtilities'
 import state from '../../../../state'
 import resetState from '../../../../src/store/resetState'
 import thisFrameOnly from '../../../../test/integration/helpers/thisFrameOnly'
-import animation from '../../../../src/animation'
+import * as animation from '../../../../src/animation'
 
 describe('harmonitooth effect', () => {
 	const harmonitoothTestHoundstoothOverrides = {
