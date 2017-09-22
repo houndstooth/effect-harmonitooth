@@ -1,5 +1,3 @@
 import harmonitoothEffect from './harmonitoothEffect'
 
-export default {
-	harmonitoothEffect,
-}
+export { harmonitoothEffect }

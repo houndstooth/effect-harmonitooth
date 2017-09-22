@@ -6,7 +6,7 @@ import { BLACK, TRANSPARENT } from '../../../../src/constants'
 import { deepClone, iterator } from '../../../../src/utilities/codeUtilities'
 import state from '../../../../state'
 import resetState from '../../../../src/store/resetState'
-import thisFrameOnly from '../../../../test/integration/helpers/thisFrameOnly'
+import { thisAnimationFrameOnly } from '../../../../test/integration/helpers/thisFrameOnly'
 import * as animation from '../../../../src/animation'
 
 describe('harmonitooth effect', () => {
@@ -18,9 +18,7 @@ describe('harmonitooth effect', () => {
 		},
 	}
 
-	let thisAnimationFrameOnly
 	beforeEach(() => {
-		thisAnimationFrameOnly = thisFrameOnly.thisAnimationFrameOnly
 		resetState(state)
 		spyOn(animation, 'animator').and.callFake(({ animationFunction, stopConditionFunction }) => {
 			while (!stopConditionFunction()) animationFunction()

@@ -1,7 +1,3 @@
-import components from './components'
+import { getHarmonicContinuumStripePositions } from './components'
 
-const { getHarmonicContinuumStripePositions } = components
-
-export default {
-	getHarmonicContinuumStripePositions,
-}
+export { getHarmonicContinuumStripePositions }

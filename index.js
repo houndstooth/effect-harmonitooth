@@ -1,7 +1,3 @@
-import effects from './effects'
+import { harmonitoothEffect } from './effects'
 
-const { harmonitoothEffect } = effects
-
-export default {
-	harmonitoothEffect,
-}
+export { harmonitoothEffect }
