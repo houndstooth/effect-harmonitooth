@@ -1,7 +1,7 @@
 import { standardAnimation } from '../../../src'
 import { getHarmonicContinuumStripePositions } from '../src'
 
-export default {
+const harmonitoothEffect = {
 	name: 'harmonitooth',
 	basePattern: {
 		stripeSettings: {
@@ -19,3 +19,5 @@ export default {
 		},
 	},
 }
+
+export default harmonitoothEffect

@@ -1,7 +1,7 @@
 import { triangularNumber, triangularRoot } from '../../../../src/utilities/mathUtilities'
 import { perStripe } from '../../../../src'
 
-export default () => perStripe({ getStripePosition: harmonicContinuumSegmentStripePosition })
+const getHarmonicContinuumSegmentStripePositions = () => perStripe({ getStripePosition: harmonicContinuumSegmentStripePosition })
 
 const harmonicContinuumSegmentStripePosition = ({ stripeCount, stripeIndex }) => {
 	const previousStripePosition = stripeCount - 1
@@ -9,3 +9,5 @@ const harmonicContinuumSegmentStripePosition = ({ stripeCount, stripeIndex }) =>
 	const currentStripePosition = triangularRoot(previousStripePositionIndex + stripeIndex)
 	return currentStripePosition - previousStripePosition
 }
+
+export default getHarmonicContinuumSegmentStripePositions
