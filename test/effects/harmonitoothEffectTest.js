@@ -4,7 +4,7 @@ import executeSelectedHoundstoothEffects from '../../../../src/execute/executeSe
 import activateTestMarkerCanvas from '../../../../test/integration/helpers/activateTestMarkerCanvas'
 import { BLACK, TRANSPARENT } from '../../../../src/constants'
 import { deepClone, iterator } from '../../../../src/utilities/codeUtilities'
-import state from '../../../../state'
+import state from '../../../../src/state'
 import resetState from '../../../../src/store/resetState'
 import { thisAnimationFrameOnly } from '../../../../test/integration/helpers/thisFrameOnly'
 import * as animation from '../../../../src/animation'
