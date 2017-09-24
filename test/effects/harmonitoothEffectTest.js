@@ -50,8 +50,8 @@ describe('harmonitooth effect', () => {
 		executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
 
-		expectHarmonicStripedTile({ stripeCount: 2, color: TRANSPARENT, addressCoordinate: 0 })
-		expectHarmonicStripedTile({ stripeCount: 2, color: BLACK, addressCoordinate: 1 })
+		expectHarmonicStripedTile({ stripeCount: 2, color: TRANSPARENT, address: 0 })
+		expectHarmonicStripedTile({ stripeCount: 2, color: BLACK, address: 1 })
 		expectWholeTile({ color: BLACK, address: [ 0, 1 ] })
 		expectWholeTile({ color: TRANSPARENT, address: [ 1, 0 ] })
 	})
@@ -65,8 +65,8 @@ describe('harmonitooth effect', () => {
 
 		executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
-		expectHarmonicStripedTile({ stripeCount: 3, color: TRANSPARENT, addressCoordinate: 0 })
-		expectHarmonicStripedTile({ stripeCount: 3, color: BLACK, addressCoordinate: 1 })
+		expectHarmonicStripedTile({ stripeCount: 3, color: TRANSPARENT, address: 0 })
+		expectHarmonicStripedTile({ stripeCount: 3, color: BLACK, address: 1 })
 		expectWholeTile({ color: BLACK, address: [ 0, 1 ] })
 		expectWholeTile({ color: TRANSPARENT, address: [ 1, 0 ] })
 	})
@@ -80,8 +80,8 @@ describe('harmonitooth effect', () => {
 
 		executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
-		expectHarmonicStripedTile({ stripeCount: 4, color: TRANSPARENT, addressCoordinate: 0 })
-		expectHarmonicStripedTile({ stripeCount: 4, color: BLACK, addressCoordinate: 1 })
+		expectHarmonicStripedTile({ stripeCount: 4, color: TRANSPARENT, address: 0 })
+		expectHarmonicStripedTile({ stripeCount: 4, color: BLACK, address: 1 })
 		expectWholeTile({ color: BLACK, address: [ 0, 1 ] })
 		expectWholeTile({ color: TRANSPARENT, address: [ 1, 0 ] })
 	})
@@ -95,17 +95,17 @@ describe('harmonitooth effect', () => {
 
 		executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
-		expectHarmonicStripedTile({ stripeCount: 5, color: TRANSPARENT, addressCoordinate: 0 })
-		expectHarmonicStripedTile({ stripeCount: 5, color: BLACK, addressCoordinate: 1 })
+		expectHarmonicStripedTile({ stripeCount: 5, color: TRANSPARENT, address: 0 })
+		expectHarmonicStripedTile({ stripeCount: 5, color: BLACK, address: 1 })
 		expectWholeTile({ color: BLACK, address: [ 0, 1 ] })
 		expectWholeTile({ color: TRANSPARENT, address: [ 1, 0 ] })
 	})
 })
 
-const expectHarmonicStripedTile = ({ stripeCount, color, addressCoordinate }) => {
+const expectHarmonicStripedTile = ({ stripeCount, color, address }) => {
 	iterator(stripeCount, { oneIndexed: true }).forEach(stripe => {
 		const expectedColor = stripe % 2 === 1 ? color : color === BLACK ? TRANSPARENT : BLACK
-		const coordinateUnderTest = harmonicStripeCenter({ stripe, stripeCount, addressCoordinate })
+		const coordinateUnderTest = harmonicStripeCenter({ index: stripe, total: stripeCount, address })
 		expect(pixelIsColorWithMarker({ coordinateUnderTest, expectedColor, id: stripe })).toBe(true)
 	})
 }
