@@ -34,10 +34,10 @@ describe('harmonitooth effect', () => {
 
 		executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
-		expectWholeTile(TRANSPARENT, [ 0, 0 ])
-		expectWholeTile(TRANSPARENT, [ 1, 0 ])
-		expectWholeTile(BLACK, [ 0, 1 ])
-		expectWholeTile(BLACK, [ 1, 1 ])
+		expectWholeTile({ color: TRANSPARENT, address: [ 0, 0 ] })
+		expectWholeTile({ color: TRANSPARENT, address: [ 1, 0 ] })
+		expectWholeTile({ color: BLACK, address: [ 0, 1 ] })
+		expectWholeTile({ color: BLACK, address: [ 1, 1 ] })
 	})
 
 	it('around frame 500, it has two harmonically proportioned stripes', () => {
@@ -49,10 +49,11 @@ describe('harmonitooth effect', () => {
 
 		executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
-		expectHarmonicStripedTile(2, TRANSPARENT, 0)
-		expectHarmonicStripedTile(2, BLACK, 1)
-		expectWholeTile(BLACK, [ 0, 1 ])
-		expectWholeTile(TRANSPARENT, [ 1, 0 ])
+
+		expectHarmonicStripedTile({ stripeCount: 2, color: TRANSPARENT, addressCoordinate: 0 })
+		expectHarmonicStripedTile({ stripeCount: 2, color: BLACK, addressCoordinate: 1 })
+		expectWholeTile({ color: BLACK, address: [ 0, 1 ] })
+		expectWholeTile({ color: TRANSPARENT, address: [ 1, 0 ] })
 	})
 
 	it('around frame 650, it has three harmonically proportioned stripes', () => {
@@ -64,10 +65,10 @@ describe('harmonitooth effect', () => {
 
 		executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
-		expectHarmonicStripedTile(3, TRANSPARENT, 0)
-		expectHarmonicStripedTile(3, BLACK, 1)
-		expectWholeTile(BLACK, [ 0, 1 ])
-		expectWholeTile(TRANSPARENT, [ 1, 0 ])
+		expectHarmonicStripedTile({ stripeCount: 3, color: TRANSPARENT, addressCoordinate: 0 })
+		expectHarmonicStripedTile({ stripeCount: 3, color: BLACK, addressCoordinate: 1 })
+		expectWholeTile({ color: BLACK, address: [ 0, 1 ] })
+		expectWholeTile({ color: TRANSPARENT, address: [ 1, 0 ] })
 	})
 
 	it('around frame 750, it has four harmonically proportioned stripes', () => {
@@ -79,10 +80,10 @@ describe('harmonitooth effect', () => {
 
 		executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
-		expectHarmonicStripedTile(4, TRANSPARENT, 0)
-		expectHarmonicStripedTile(4, BLACK, 1)
-		expectWholeTile(BLACK, [ 0, 1 ])
-		expectWholeTile(TRANSPARENT, [ 1, 0 ])
+		expectHarmonicStripedTile({ stripeCount: 4, color: TRANSPARENT, addressCoordinate: 0 })
+		expectHarmonicStripedTile({ stripeCount: 4, color: BLACK, addressCoordinate: 1 })
+		expectWholeTile({ color: BLACK, address: [ 0, 1 ] })
+		expectWholeTile({ color: TRANSPARENT, address: [ 1, 0 ] })
 	})
 
 	it('around frame 800, it has two harmonically proportioned stripes', () => {
@@ -94,22 +95,22 @@ describe('harmonitooth effect', () => {
 
 		executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
-		expectHarmonicStripedTile(5, TRANSPARENT, 0)
-		expectHarmonicStripedTile(5, BLACK, 1)
-		expectWholeTile(BLACK, [ 0, 1 ])
-		expectWholeTile(TRANSPARENT, [ 1, 0 ])
+		expectHarmonicStripedTile({ stripeCount: 5, color: TRANSPARENT, addressCoordinate: 0 })
+		expectHarmonicStripedTile({ stripeCount: 5, color: BLACK, addressCoordinate: 1 })
+		expectWholeTile({ color: BLACK, address: [ 0, 1 ] })
+		expectWholeTile({ color: TRANSPARENT, address: [ 1, 0 ] })
 	})
 })
 
-const expectHarmonicStripedTile = (stripeCount, color, addressCoordinate) => {
+const expectHarmonicStripedTile = ({ stripeCount, color, addressCoordinate }) => {
 	iterator(stripeCount, { oneIndexed: true }).forEach(stripe => {
 		const expectedColor = stripe % 2 === 1 ? color : color === BLACK ? TRANSPARENT : BLACK
-		const harmonicPixel = harmonicStripeCenter(stripe, stripeCount, addressCoordinate)
-		expect(pixelIsColorWithMarker(harmonicPixel, expectedColor, stripe)).toBe(true)
+		const coordinateUnderTest = harmonicStripeCenter({ stripe, stripeCount, addressCoordinate })
+		expect(pixelIsColorWithMarker({ coordinateUnderTest, expectedColor, id: stripe })).toBe(true)
 	})
 }
 
-const harmonicStripeCenter = (index, total, address) => {
+const harmonicStripeCenter = ({ index, total, address }) => {
 	const fullProportions = iterator(total).reduce((sum, val) => sum + 1 / (val + 2), 0)
 	const thisProportion = iterator(index).reduce((sum, val) => sum + 1 / (val + 2), 0)
 	const adjustForHalf = 1 / ((index + 2) * 2)
@@ -118,9 +119,9 @@ const harmonicStripeCenter = (index, total, address) => {
 	return [ coordinateScaledAndTransposed, coordinateScaledAndTransposed ]
 }
 
-const expectWholeTile = (color, address) => {
+const expectWholeTile = ({ color: expectedColor, address }) => {
 	iterator(12).forEach(check => {
-		const coordinate = [ 50 * (address[ 0 ] + (check / 12)), 50 * (address[ 1 ] + (check / 12)) ]
-		expect(pixelIsColorWithMarker(coordinate, color, check)).toBe(true)
+		const coordinateUnderTest = [ 50 * (address[ 0 ] + (check / 12)), 50 * (address[ 1 ] + (check / 12)) ]
+		expect(pixelIsColorWithMarker({ coordinateUnderTest, expectedColor, id: check })).toBe(true)
 	})
 }
