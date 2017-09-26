@@ -1,13 +1,13 @@
-import harmonitoothEffect from '../../effects/harmonitoothEffect'
-import pixelIsColorWithMarker from '../../../../test/integration/helpers/pixelIsColorWithMarker'
-import executeSelectedHoundstoothEffects from '../../../../src/execute/executeSelectedHoundstoothEffects'
-import activateTestMarkerCanvas from '../../../../test/integration/helpers/activateTestMarkerCanvas'
-import { BLACK, TRANSPARENT } from '../../../../src/constants'
-import { deepClone, iterator } from '../../../../src/utilities/codeUtilities'
-import state from '../../../../src/state'
-import resetState from '../../../../src/store/resetState'
-import { thisAnimationFrameOnly } from '../../../../test/integration/helpers/thisFrameOnly'
-import * as animation from '../../../../src/animation'
+import harmonitoothEffect from '../../../effects/harmonitoothEffect'
+import pixelIsColorWithMarker from '../../../../../test/integration/helpers/pixelIsColorWithMarker'
+import executeSelectedHoundstoothEffects from '../../../../../src/execute/executeSelectedHoundstoothEffects'
+import activateTestMarkerCanvas from '../../../../../test/integration/helpers/activateTestMarkerCanvas'
+import { BLACK, TRANSPARENT } from '../../../../../src/constants'
+import { deepClone, iterator } from '../../../../../src/utilities/codeUtilities'
+import state from '../../../../../src/state'
+import resetState from '../../../../../src/store/resetState'
+import { thisAnimationFrameOnly } from '../../../../../test/integration/helpers/thisFrameOnly'
+import * as animation from '../../../../../src/animation/index'
 
 describe('harmonitooth effect', () => {
 	const harmonitoothTestHoundstoothOverrides = {

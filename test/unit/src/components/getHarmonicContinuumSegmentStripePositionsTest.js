@@ -1,7 +1,7 @@
-import getHarmonicContinuumSegmentStripePositions from '../../../src/components/getHarmonicContinuumSegmentStripePositions'
-import state from '../../../../../src/state'
-import resetState from '../../../../../src/store/resetState'
-import composeMainHoundstooth from '../../../../../src/execute/composeMainHoundstooth'
+import getHarmonicContinuumSegmentStripePositions from '../../../../src/components/getHarmonicContinuumSegmentStripePositions'
+import state from '../../../../../../src/state'
+import resetState from '../../../../../../src/store/resetState'
+import composeMainHoundstooth from '../../../../../../src/execute/composeMainHoundstooth'
 
 describe('get harmonic continuum segment stripe positions', () => {
 	it('can calculate the same information that the gingham chevron continuum stripe positions can, just each tile individually figures itself out, inferring its position in the whole from its stripe count', () => {

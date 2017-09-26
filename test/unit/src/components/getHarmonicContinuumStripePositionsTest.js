@@ -1,7 +1,7 @@
-import getHarmonicContinuumStripePositions from '../../../src/components/getHarmonicContinuumStripePositions'
-import state from '../../../../../src/state'
-import resetState from '../../../../../src/store/resetState'
-import composeMainHoundstooth from '../../../../../src/execute/composeMainHoundstooth'
+import getHarmonicContinuumStripePositions from '../../../../src/components/getHarmonicContinuumStripePositions'
+import state from '../../../../../../src/state'
+import resetState from '../../../../../../src/store/resetState'
+import composeMainHoundstooth from '../../../../../../src/execute/composeMainHoundstooth'
 
 describe('get harmonic continuum stripe positions', () => {
 	it('given a count of stripes in each striped tile, and the desired index, will tell you how far across that tile that stripe starts', () => {
