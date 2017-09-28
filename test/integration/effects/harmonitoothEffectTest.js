@@ -5,7 +5,6 @@ import activateTestMarkerCanvas from '../../../../../test/integration/helpers/ac
 import { BLACK, TRANSPARENT } from '../../../../../src/constants'
 import { deepClone, iterator } from '../../../../../src/utilities/codeUtilities'
 import state from '../../../../../src/state'
-import resetState from '../../../../../src/store/resetState'
 import { thisAnimationFrameOnly } from '../../../../../test/integration/helpers/thisFrameOnly'
 import * as animation from '../../../../../src/animation/index'
 
@@ -19,7 +18,6 @@ describe('harmonitooth effect', () => {
 	}
 
 	beforeEach(() => {
-		resetState(state)
 		spyOn(animation, 'animator').and.callFake(({ animationFunction, stopConditionFunction }) => {
 			while (!stopConditionFunction()) animationFunction()
 		})
