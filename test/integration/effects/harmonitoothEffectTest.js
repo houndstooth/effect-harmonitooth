@@ -6,7 +6,7 @@ import { BLACK, TRANSPARENT } from '../../../../../src/constants'
 import { deepClone, iterator } from '../../../../../src/utilities/codeUtilities'
 import state from '../../../../../src/state'
 import { thisAnimationFrameOnly } from '../../../../../test/integration/helpers/thisFrameOnly'
-import * as animation from '../../../../../src/animation/index'
+import * as animator from '../../../../../src/animation/animator'
 
 describe('harmonitooth effect', () => {
 	const harmonitoothTestHoundstoothOverrides = {
@@ -18,7 +18,7 @@ describe('harmonitooth effect', () => {
 	}
 
 	beforeEach(() => {
-		spyOn(animation, 'animator').and.callFake(({ animationFunction, stopConditionFunction }) => {
+		spyOn(animator, 'default').and.callFake(({ animationFunction, stopConditionFunction }) => {
 			while (!stopConditionFunction()) animationFunction()
 		})
 	})
