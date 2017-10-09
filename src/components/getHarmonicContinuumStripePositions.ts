@@ -3,6 +3,8 @@ import { perStripe } from '../../../../src'
 
 const getHarmonicContinuumStripePositions = () => perStripe({ getStripePosition: harmonicContinuumStripePosition })
 
-const harmonicContinuumStripePosition = ({ stripeIndex, stripeCount }) => triangularRoot(stripeIndex) / triangularRoot(stripeCount)
+const harmonicContinuumStripePosition = ({ stripeIndex, stripeCount }) => {
+	return triangularRoot(stripeIndex) / triangularRoot(stripeCount)
+}
 
 export default getHarmonicContinuumStripePositions
