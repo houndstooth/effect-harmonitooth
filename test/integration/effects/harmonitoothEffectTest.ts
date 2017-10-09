@@ -19,7 +19,9 @@ describe('harmonitooth effect', () => {
 
 	beforeEach(() => {
 		spyOn(animator, 'default').and.callFake(({ animationFunction, stopConditionFunction }) => {
-			while (!stopConditionFunction()) animationFunction()
+			while (!stopConditionFunction()) {
+				animationFunction()
+			}
 		})
 	})
 
