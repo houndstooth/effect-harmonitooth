@@ -49,7 +49,6 @@ describe('harmonitooth effect', () => {
 
 		executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
-
 		expectHarmonicStripedTile({ stripeCount: 2, color: TRANSPARENT, address: 0 })
 		expectHarmonicStripedTile({ stripeCount: 2, color: BLACK, address: 1 })
 		expectWholeTile({ color: BLACK, address: [ 0, 1 ] })
