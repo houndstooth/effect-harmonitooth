@@ -1,9 +1,13 @@
 import { triangularRoot } from '../../../../src/utilities/mathUtilities'
 import { perStripe } from '../../../../src'
 
-const getHarmonicContinuumStripePositions = () => perStripe({ getStripePosition: harmonicContinuumStripePosition })
+const getHarmonicContinuumStripePositions: { (): number[] } = () => {
+	return perStripe({ getStripePosition: harmonicContinuumStripePosition })
+}
 
-const harmonicContinuumStripePosition = ({ stripeIndex, stripeCount }) => {
+type HarmonicContinuumStripePosition = { ({}: { stripeIndex: number, stripeCount: number }): number }
+
+const harmonicContinuumStripePosition: HarmonicContinuumStripePosition = ({ stripeIndex, stripeCount }) => {
 	return triangularRoot(stripeIndex) / triangularRoot(stripeCount)
 }
 

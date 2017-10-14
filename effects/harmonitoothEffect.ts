@@ -1,7 +1,8 @@
 import { standardAnimation } from '../../../src'
 import { getHarmonicContinuumStripePositions } from '../src'
+import { Houndstooth } from '../../../src'
 
-const harmonitoothEffect = {
+const harmonitoothEffect: Houndstooth = {
 	name: 'harmonitooth',
 	basePattern: {
 		stripeSettings: {
