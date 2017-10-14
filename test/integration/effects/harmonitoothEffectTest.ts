@@ -8,6 +8,7 @@ import { thisAnimationFrameOnly } from '../../../../../test/integration/helpers/
 import * as animator from '../../../../../src/animation/animator'
 import expectWholeTile from '../helpers/expectWholeTile'
 import expectHarmonicStripedTile from '../helpers/expectHarmonicStripedTile'
+import Address from '../../../../../src/components/types/Address'
 
 describe('harmonitooth effect', () => {
 	const harmonitoothTestHoundstoothOverrides = {
@@ -35,10 +36,10 @@ describe('harmonitooth effect', () => {
 
 		executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
-		expectWholeTile({ color: TRANSPARENT, gridAddress: [ 0, 0 ] })
-		expectWholeTile({ color: TRANSPARENT, gridAddress: [ 1, 0 ] })
-		expectWholeTile({ color: BLACK, gridAddress: [ 0, 1 ] })
-		expectWholeTile({ color: BLACK, gridAddress: [ 1, 1 ] })
+		expectWholeTile({ color: TRANSPARENT, gridAddress: [ 0, 0 ] as Address })
+		expectWholeTile({ color: TRANSPARENT, gridAddress: [ 1, 0 ] as Address })
+		expectWholeTile({ color: BLACK, gridAddress: [ 0, 1 ] as Address })
+		expectWholeTile({ color: BLACK, gridAddress: [ 1, 1 ] as Address })
 	})
 
 	it('around frame 500, it has two harmonically proportioned stripes', () => {
@@ -52,8 +53,8 @@ describe('harmonitooth effect', () => {
 
 		expectHarmonicStripedTile({ stripeCount: 2, color: TRANSPARENT, diagonalAddress: 0 })
 		expectHarmonicStripedTile({ stripeCount: 2, color: BLACK, diagonalAddress: 1 })
-		expectWholeTile({ color: BLACK, gridAddress: [ 0, 1 ] })
-		expectWholeTile({ color: TRANSPARENT, gridAddress: [ 1, 0 ] })
+		expectWholeTile({ color: BLACK, gridAddress: [ 0, 1 ] as Address })
+		expectWholeTile({ color: TRANSPARENT, gridAddress: [ 1, 0 ] as Address })
 	})
 
 	it('around frame 650, it has three harmonically proportioned stripes', () => {
@@ -67,8 +68,8 @@ describe('harmonitooth effect', () => {
 
 		expectHarmonicStripedTile({ stripeCount: 3, color: TRANSPARENT, diagonalAddress: 0 })
 		expectHarmonicStripedTile({ stripeCount: 3, color: BLACK, diagonalAddress: 1 })
-		expectWholeTile({ color: BLACK, gridAddress: [ 0, 1 ] })
-		expectWholeTile({ color: TRANSPARENT, gridAddress: [ 1, 0 ] })
+		expectWholeTile({ color: BLACK, gridAddress: [ 0, 1 ] as Address })
+		expectWholeTile({ color: TRANSPARENT, gridAddress: [ 1, 0 ] as Address })
 	})
 
 	it('around frame 750, it has four harmonically proportioned stripes', () => {
@@ -82,8 +83,8 @@ describe('harmonitooth effect', () => {
 
 		expectHarmonicStripedTile({ stripeCount: 4, color: TRANSPARENT, diagonalAddress: 0 })
 		expectHarmonicStripedTile({ stripeCount: 4, color: BLACK, diagonalAddress: 1 })
-		expectWholeTile({ color: BLACK, gridAddress: [ 0, 1 ] })
-		expectWholeTile({ color: TRANSPARENT, gridAddress: [ 1, 0 ] })
+		expectWholeTile({ color: BLACK, gridAddress: [ 0, 1 ] as Address })
+		expectWholeTile({ color: TRANSPARENT, gridAddress: [ 1, 0 ] as Address })
 	})
 
 	it('around frame 800, it has two harmonically proportioned stripes', () => {
@@ -97,7 +98,7 @@ describe('harmonitooth effect', () => {
 
 		expectHarmonicStripedTile({ stripeCount: 5, color: TRANSPARENT, diagonalAddress: 0 })
 		expectHarmonicStripedTile({ stripeCount: 5, color: BLACK, diagonalAddress: 1 })
-		expectWholeTile({ color: BLACK, gridAddress: [ 0, 1 ] })
-		expectWholeTile({ color: TRANSPARENT, gridAddress: [ 1, 0 ] })
+		expectWholeTile({ color: BLACK, gridAddress: [ 0, 1 ] as Address })
+		expectWholeTile({ color: TRANSPARENT, gridAddress: [ 1, 0 ] as Address })
 	})
 })
