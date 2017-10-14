@@ -16,9 +16,9 @@ describe('get harmonic continuum stripe positions', () => {
 				},
 			})
 
-			expect(getHarmonicContinuumStripePositions()[ 0 ]).toBe(0)
-			expect(getHarmonicContinuumStripePositions()[ 1 ]).toBe(1 / 2)
-			expect(getHarmonicContinuumStripePositions()[ 3 ]).toBe(1)
-			expect(getHarmonicContinuumStripePositions()[ 6 ]).toBe(3 / 2)
+			expect(getHarmonicContinuumStripePositions()[ 0 ]).toBe(0 as any)
+			expect(getHarmonicContinuumStripePositions()[ 1 ]).toBe(1 / 2 as any)
+			expect(getHarmonicContinuumStripePositions()[ 3 ]).toBe(1 as any)
+			expect(getHarmonicContinuumStripePositions()[ 6 ]).toBe(3 / 2 as any)
 		})
 })
