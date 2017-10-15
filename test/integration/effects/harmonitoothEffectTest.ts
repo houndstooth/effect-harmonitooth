@@ -10,13 +10,14 @@ import expectWholeTile from '../helpers/expectWholeTile'
 import expectHarmonicStripedTile from '../helpers/expectHarmonicStripedTile'
 import Address from '../../../../../src/components/types/Address'
 import Houndstooth from '../../../../../src/store/types/Houndstooth'
+import CanvasSize from '../../../../../src/canvas/types/CanvasSize'
 
 describe('harmonitooth effect', () => {
 	const harmonitoothTestHoundstoothOverrides = {
 		basePattern: {
 			gridSettings: { gridSize: 2 },
-			viewSettings: { canvasSize: 100 },
-			tileSettings: { tileSizeSetting: 50 },
+			viewSettings: { canvasSize: 100 as CanvasSize },
+			tileSettings: { tileSizeSetting: 50 as any },
 		},
 	} as Houndstooth
 
