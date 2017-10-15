@@ -1,6 +1,5 @@
-import { standardAnimation } from '../../../src'
+import { standardAnimation, Houndstooth } from '../../../src'
 import { getHarmonicContinuumStripePositions } from '../src'
-import { Houndstooth } from '../../../src'
 
 const harmonitoothEffect: Houndstooth = {
 	name: 'harmonitooth',

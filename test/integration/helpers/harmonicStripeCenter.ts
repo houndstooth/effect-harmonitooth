@@ -9,6 +9,7 @@ const harmonicStripeCenter: HarmonicStripeCenter = ({ index, total, diagonalAddr
 	const adjustForHalf = 1 / ((index + 2) * 2)
 	const coordinate = (thisProportion - adjustForHalf) / fullProportions
 	const coordinateScaledAndTransposed = (diagonalAddress + coordinate) * 50
+
 	return [ coordinateScaledAndTransposed, coordinateScaledAndTransposed ] as Coordinate
 }
 
