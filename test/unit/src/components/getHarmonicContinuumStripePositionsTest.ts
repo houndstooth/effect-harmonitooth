@@ -2,7 +2,7 @@ import getHarmonicContinuumStripePositions from '../../../../src/components/getH
 import composeMainHoundstooth from '../../../../../../src/execute/composeMainHoundstooth'
 
 describe('get harmonic continuum stripe positions', () => {
-	// eslint-disable-next-line max-len
+	// tslint:disable-next-line:max-line-length
 	it('given a count of stripes in each striped tile, and the desired index, will tell you how far across that tile that stripe starts', () => {
 		composeMainHoundstooth({
 			houndstoothOverrides: {

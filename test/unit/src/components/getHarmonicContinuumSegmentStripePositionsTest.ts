@@ -1,9 +1,9 @@
-// eslint-disable-next-line max-len
+// tslint:disable-next-line:max-line-length
 import getHarmonicContinuumSegmentStripePositions from '../../../../src/components/getHarmonicContinuumSegmentStripePositions'
 import composeMainHoundstooth from '../../../../../../src/execute/composeMainHoundstooth'
 
 describe('get harmonic continuum segment stripe positions', () => {
-	// eslint-disable-next-line max-len
+	// tslint:disable-next-line:max-line-length
 	it('can calculate the same information that the gingham chevron continuum stripe positions can, just each tile individually figures itself out, inferring its position in the whole from its stripe count', () => {
 		composeMainHoundstooth({
 			houndstoothOverrides: {
