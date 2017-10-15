@@ -5,10 +5,9 @@ import StripePosition from '../../../../src/components/types/StripePosition'
 const getHarmonicContinuumSegmentStripePositions: { (): StripePosition[] } = () =>
 	perStripe({ getStripePosition: harmonicContinuumSegmentStripePosition })
 
-type HarmonicContinuumSegmentStripePosition = { ({}: { stripeCount: number, stripeIndex: number }): StripePosition }
-
-const harmonicContinuumSegmentStripePosition: HarmonicContinuumSegmentStripePosition = params => {
-	const { stripeCount, stripeIndex } = params
+const harmonicContinuumSegmentStripePosition: {
+	({}: { stripeCount: number, stripeIndex: number }): StripePosition,
+} = ({ stripeCount, stripeIndex }) => {
 	const previousStripePosition = stripeCount - 1
 	const previousStripePositionIndex = triangularNumber(previousStripePosition)
 	const currentStripePosition = triangularRoot(previousStripePositionIndex + stripeIndex)
