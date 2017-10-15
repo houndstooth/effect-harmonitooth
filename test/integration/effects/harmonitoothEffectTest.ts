@@ -9,6 +9,7 @@ import * as animator from '../../../../../src/animation/animator'
 import expectWholeTile from '../helpers/expectWholeTile'
 import expectHarmonicStripedTile from '../helpers/expectHarmonicStripedTile'
 import Address from '../../../../../src/components/types/Address'
+import Houndstooth from '../../../../../src/store/types/Houndstooth'
 
 describe('harmonitooth effect', () => {
 	const harmonitoothTestHoundstoothOverrides = {
@@ -17,7 +18,7 @@ describe('harmonitooth effect', () => {
 			viewSettings: { canvasSize: 100 },
 			tileSettings: { tileSizeSetting: 50 },
 		},
-	}
+	} as Houndstooth
 
 	beforeEach(() => {
 		spyOn(animator, 'default').and.callFake(({ animationFunction, stopConditionFunction }) => {
