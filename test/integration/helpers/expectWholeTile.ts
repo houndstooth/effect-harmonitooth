@@ -2,7 +2,7 @@ import { Address, Color, Coordinate } from '../../../../../src'
 import { iterator } from '../../../../../src/utilities/codeUtilities'
 import pixelIsColorWithMarker from '../../../../../test/integration/helpers/pixelIsColorWithMarker'
 
-type ExpectWholeTile = { ({}: { color: Color, gridAddress: Address }): void }
+interface ExpectWholeTile { ({}: { color: Color, gridAddress: Address }): void }
 
 const expectWholeTile: ExpectWholeTile = ({ color: expectedColor, gridAddress }) => {
 	iterator(12).forEach(check => {
