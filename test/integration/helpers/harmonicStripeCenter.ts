@@ -1,9 +1,9 @@
 import { iterator } from '../../../../../src/utilities/codeUtilities'
 import { Coordinate } from '../../../../../src'
 
-type HarmonicStripeCenter = {({}: { index: number, total: number, diagonalAddress: number }): Coordinate}
+type HarmonicStripeCenter = { ({}: { diagonalAddress: number, index: number, total: number }): Coordinate }
 
-const harmonicStripeCenter: HarmonicStripeCenter = ({ index, total, diagonalAddress }) => {
+const harmonicStripeCenter: HarmonicStripeCenter = ({ diagonalAddress, index, total }) => {
 	const fullProportions = iterator(total).reduce((sum, val) => sum + 1 / (val + 2), 0)
 	const thisProportion = iterator(index).reduce((sum, val) => sum + 1 / (val + 2), 0)
 	const adjustForHalf = 1 / ((index + 2) * 2)

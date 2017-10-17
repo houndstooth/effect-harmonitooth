@@ -4,9 +4,9 @@ import harmonicStripeCenter from './harmonicStripeCenter'
 import { BLACK, TRANSPARENT } from '../../../../../src/constants'
 import { Color } from '../../../../../src'
 
-type ExpectHarmonicStripedTile = { ({}: { stripeCount: number, color: Color, diagonalAddress: number }): void }
+type ExpectHarmonicStripedTile = { ({}: { color: Color, diagonalAddress: number, stripeCount: number }): void }
 
-const expectHarmonicStripedTile: ExpectHarmonicStripedTile = ({ stripeCount, color, diagonalAddress }) => {
+const expectHarmonicStripedTile: ExpectHarmonicStripedTile = ({ color, diagonalAddress, stripeCount }) => {
 	iterator(stripeCount, { oneIndexed: true }).forEach(stripe => {
 		const expectedColor = stripe % 2 === 1 ? color : color === BLACK ? TRANSPARENT : BLACK
 		const coordinateUnderTest = harmonicStripeCenter({ index: stripe, total: stripeCount, diagonalAddress })
