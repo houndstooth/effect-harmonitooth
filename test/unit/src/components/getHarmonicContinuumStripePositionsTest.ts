@@ -1,5 +1,5 @@
-import getHarmonicContinuumStripePositions from '../../../../src/components/getHarmonicContinuumStripePositions'
 import composeMainHoundstooth from '../../../../../../src/execute/composeMainHoundstooth'
+import getHarmonicContinuumStripePositions from '../../../../src/components/getHarmonicContinuumStripePositions'
 
 describe('get harmonic continuum stripe positions', () => {
 	// tslint:disable-next-line:max-line-length

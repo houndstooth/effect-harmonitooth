@@ -1,5 +1,5 @@
-import { iterator } from '../../../../../src/utilities/codeUtilities'
 import { Coordinate } from '../../../../../src'
+import { iterator } from '../../../../../src/utilities/codeUtilities'
 
 type HarmonicStripeCenter = { ({}: { diagonalAddress: number, index: number, total: number }): Coordinate }
 
