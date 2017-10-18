@@ -7,4 +7,4 @@ const getHarmonicContinuumStripePositions: () => StripePosition[] = () =>
 const harmonicContinuumStripePosition: GetStripePosition = ({ stripeIndex, stripeCount }) =>
 	triangularRoot(stripeIndex) / triangularRoot(stripeCount) as any
 
-export default getHarmonicContinuumStripePositions
+export { getHarmonicContinuumStripePositions }

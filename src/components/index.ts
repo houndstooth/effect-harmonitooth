@@ -1,3 +1,3 @@
-import getHarmonicContinuumStripePositions from './getHarmonicContinuumStripePositions'
+import { getHarmonicContinuumStripePositions } from './getHarmonicContinuumStripePositions'
 
 export { getHarmonicContinuumStripePositions }

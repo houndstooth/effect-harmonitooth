@@ -12,4 +12,4 @@ const harmonicContinuumSegmentStripePosition: GetStripePosition = ({ stripeCount
 	return currentStripePosition - previousStripePosition as any
 }
 
-export default getHarmonicContinuumSegmentStripePositions
+export { getHarmonicContinuumSegmentStripePositions }

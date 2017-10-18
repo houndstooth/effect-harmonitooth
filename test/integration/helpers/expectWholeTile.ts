@@ -1,6 +1,6 @@
 import { Address, Color, Coordinate } from '../../../../../src'
 import { iterator } from '../../../../../src/utilities/codeUtilities'
-import pixelIsColorWithMarker from '../../../../../test/integration/helpers/pixelIsColorWithMarker'
+import { pixelIsColorWithMarker } from '../../../../../test/integration/helpers/pixelIsColorWithMarker'
 
 type ExpectWholeTile = (_: { color: Color, gridAddress: Address }) => void
 
@@ -14,4 +14,4 @@ const expectWholeTile: ExpectWholeTile = ({ color: expectedColor, gridAddress })
 	})
 }
 
-export default expectWholeTile
+export { expectWholeTile }

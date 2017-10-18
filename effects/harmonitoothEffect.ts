@@ -20,4 +20,4 @@ const harmonitoothEffect: Houndstooth = {
 	name: 'harmonitooth',
 }
 
-export default harmonitoothEffect
+export { harmonitoothEffect }

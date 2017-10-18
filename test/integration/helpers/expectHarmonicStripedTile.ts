@@ -1,8 +1,8 @@
 import { Color } from '../../../../../src'
 import { BLACK, TRANSPARENT } from '../../../../../src/constants'
 import { iterator } from '../../../../../src/utilities/codeUtilities'
-import pixelIsColorWithMarker from '../../../../../test/integration/helpers/pixelIsColorWithMarker'
-import harmonicStripeCenter from './harmonicStripeCenter'
+import { pixelIsColorWithMarker } from '../../../../../test/integration/helpers/pixelIsColorWithMarker'
+import { harmonicStripeCenter } from './harmonicStripeCenter'
 
 type ExpectHarmonicStripedTile = (_: { color: Color, diagonalAddress: number, stripeCount: number }) => void
 
@@ -14,4 +14,4 @@ const expectHarmonicStripedTile: ExpectHarmonicStripedTile = ({ color, diagonalA
 	})
 }
 
-export default expectHarmonicStripedTile
+export { expectHarmonicStripedTile }

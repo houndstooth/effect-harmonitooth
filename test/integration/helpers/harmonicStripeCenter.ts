@@ -13,4 +13,4 @@ const harmonicStripeCenter: HarmonicStripeCenter = ({ diagonalAddress, index, to
 	return [ coordinateScaledAndTransposed as any, coordinateScaledAndTransposed as any ] as Coordinate
 }
 
-export default harmonicStripeCenter
+export { harmonicStripeCenter }

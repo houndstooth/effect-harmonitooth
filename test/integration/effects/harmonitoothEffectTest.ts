@@ -1,15 +1,15 @@
 import * as animator from '../../../../../src/animation/animator'
-import CanvasSize from '../../../../../src/canvas/types/CanvasSize'
-import Address from '../../../../../src/components/types/Address'
+import { CanvasSize } from '../../../../../src/canvas/types/CanvasSize'
+import { Address } from '../../../../../src/components/types/Address'
 import { BLACK, TRANSPARENT } from '../../../../../src/constants'
-import executeSelectedHoundstoothEffects from '../../../../../src/execute/executeSelectedHoundstoothEffects'
-import state from '../../../../../src/state'
+import { executeSelectedHoundstoothEffects } from '../../../../../src/execute/executeSelectedHoundstoothEffects'
+import { state } from '../../../../../src/state'
 import { deepClone } from '../../../../../src/utilities/codeUtilities'
-import activateTestMarkerCanvas from '../../../../../test/integration/helpers/activateTestMarkerCanvas'
+import { activateTestMarkerCanvas } from '../../../../../test/integration/helpers/activateTestMarkerCanvas'
 import { thisAnimationFrameOnly } from '../../../../../test/integration/helpers/thisFrameOnly'
-import harmonitoothEffect from '../../../effects/harmonitoothEffect'
-import expectHarmonicStripedTile from '../helpers/expectHarmonicStripedTile'
-import expectWholeTile from '../helpers/expectWholeTile'
+import { harmonitoothEffect } from '../../../effects/harmonitoothEffect'
+import { expectHarmonicStripedTile } from '../helpers/expectHarmonicStripedTile'
+import { expectWholeTile } from '../helpers/expectWholeTile'
 
 describe('harmonitooth effect', () => {
 	const harmonitoothTestHoundstoothOverrides = {
