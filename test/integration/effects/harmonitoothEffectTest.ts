@@ -4,7 +4,6 @@ import Address from '../../../../../src/components/types/Address'
 import { BLACK, TRANSPARENT } from '../../../../../src/constants'
 import executeSelectedHoundstoothEffects from '../../../../../src/execute/executeSelectedHoundstoothEffects'
 import state from '../../../../../src/state'
-import Houndstooth from '../../../../../src/store/types/Houndstooth'
 import { deepClone } from '../../../../../src/utilities/codeUtilities'
 import activateTestMarkerCanvas from '../../../../../test/integration/helpers/activateTestMarkerCanvas'
 import { thisAnimationFrameOnly } from '../../../../../test/integration/helpers/thisFrameOnly'
@@ -19,7 +18,7 @@ describe('harmonitooth effect', () => {
 			tileSettings: { tileSizeSetting: 50 as any },
 			viewSettings: { canvasSize: 100 as CanvasSize },
 		},
-	} as Houndstooth
+	}
 
 	beforeEach(() => {
 		spyOn(animator, 'default').and.callFake(({ animationFunction, stopConditionFunction }) => {
