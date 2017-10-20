@@ -1,5 +1,4 @@
 import * as animator from '../../../../../src/animation/animator'
-import { CanvasSize } from '../../../../../src/canvas/types/CanvasSize'
 import { Address } from '../../../../../src/components/types/Address'
 import { BLACK, TRANSPARENT } from '../../../../../src/constants'
 import { executeSelectedHoundstoothEffects } from '../../../../../src/execute/executeSelectedHoundstoothEffects'
@@ -16,7 +15,7 @@ describe('harmonitooth effect', () => {
 		basePattern: {
 			gridSettings: { gridSize: 2 },
 			tileSettings: { tileSizeSetting: 50 as any },
-			viewSettings: { canvasSize: 100 as CanvasSize },
+			viewSettings: { canvasSize: 100 },
 		},
 	}
 
