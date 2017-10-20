@@ -1,4 +1,4 @@
-import { Coordinate } from '../../../../../src'
+import { Coordinate, to } from '../../../../../src'
 import { iterator } from '../../../../../src/utilities/codeUtilities'
 
 type HarmonicStripeCenter = (_: { diagonalAddress: number, index: number, total: number }) => Coordinate
@@ -10,7 +10,7 @@ const harmonicStripeCenter: HarmonicStripeCenter = ({ diagonalAddress, index, to
 	const coordinate = (thisProportion - adjustForHalf) / fullProportions
 	const coordinateScaledAndTransposed = (diagonalAddress + coordinate) * 50
 
-	return [ coordinateScaledAndTransposed as any, coordinateScaledAndTransposed as any ] as Coordinate
+	return to.Coordinate([ coordinateScaledAndTransposed, coordinateScaledAndTransposed ])
 }
 
 export { harmonicStripeCenter }

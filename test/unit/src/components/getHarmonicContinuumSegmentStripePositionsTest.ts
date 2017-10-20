@@ -1,5 +1,6 @@
-// tslint:disable-next-line:max-line-length
+import { to } from '../../../../../../src'
 import { composeMainHoundstooth } from '../../../../../../src/execute/composeMainHoundstooth'
+// tslint:disable-next-line:max-line-length
 import { getHarmonicContinuumSegmentStripePositions } from '../../../../src/components/getHarmonicContinuumSegmentStripePositions'
 
 describe('get harmonic continuum segment stripe positions', () => {
@@ -17,7 +18,7 @@ describe('get harmonic continuum segment stripe positions', () => {
 			},
 		})
 
-		expect(getHarmonicContinuumSegmentStripePositions()).toEqual([
+		expect(getHarmonicContinuumSegmentStripePositions()).toEqual(to.StripePositions([
 			0,
 			0.23368793961408585,
 			0.4642491965729789,
@@ -27,6 +28,6 @@ describe('get harmonic continuum segment stripe positions', () => {
 			1.3575597506858195,
 			1.5741756210067095,
 			1.7882942280559355,
-		] as any)
+		]))
 	})
 })

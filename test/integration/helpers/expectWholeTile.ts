@@ -1,15 +1,15 @@
-import { Address, Color, Coordinate } from '../../../../../src'
+import { Address, Color, to } from '../../../../../src'
 import { iterator } from '../../../../../src/utilities/codeUtilities'
 import { pixelIsColorWithMarker } from '../../../../../test/integration/helpers/pixelIsColorWithMarker'
 
-type ExpectWholeTile = (_: { color: Color, gridAddress: Address }) => void
-
-const expectWholeTile: ExpectWholeTile = ({ color: expectedColor, gridAddress }) => {
+const expectWholeTile: (_: {
+	color: Color, gridAddress: Address,
+}) => void = ({ color: expectedColor, gridAddress }) => {
 	iterator(12).forEach(check => {
-		const coordinateUnderTest = [
-			(gridAddress[ 0 ] + check / 12) * 50 as any,
-			(gridAddress[ 1 ] + check / 12) * 50 as any,
-		] as Coordinate
+		const coordinateUnderTest = to.Coordinate([
+			(gridAddress[ 0 ] + check / 12) * 50,
+			(gridAddress[ 1 ] + check / 12) * 50,
+		])
 		expect(pixelIsColorWithMarker({ coordinateUnderTest, expectedColor, id: check })).toBe(true)
 	})
 }

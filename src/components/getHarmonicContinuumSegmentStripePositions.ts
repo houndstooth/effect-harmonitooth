@@ -1,4 +1,4 @@
-import { GetStripePosition, perStripe, StripePosition } from '../../../../src'
+import { GetStripePosition, perStripe, StripePosition, to } from '../../../../src'
 import { triangularNumber, triangularRoot } from '../../../../src/utilities/mathUtilities'
 
 const getHarmonicContinuumSegmentStripePositions: () => StripePosition[] = () =>
@@ -9,7 +9,7 @@ const harmonicContinuumSegmentStripePosition: GetStripePosition = ({ stripeCount
 	const previousStripePositionIndex = triangularNumber(previousStripePosition)
 	const currentStripePosition = triangularRoot(previousStripePositionIndex + stripeIndex)
 
-	return currentStripePosition - previousStripePosition as any
+	return to.StripePosition(currentStripePosition - previousStripePosition)
 }
 
 export { getHarmonicContinuumSegmentStripePositions }
