@@ -13,7 +13,7 @@ describe('harmonitooth effect', () => {
 	const harmonitoothTestHoundstoothOverrides = {
 		basePattern: {
 			gridSettings: { gridSize: 2 },
-			tileSettings: { tileSizeSetting: 50 },
+			tileSettings: { tileSize: 50 },
 			viewSettings: { canvasSize: 100 },
 		},
 	}

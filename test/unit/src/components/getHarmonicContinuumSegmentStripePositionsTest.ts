@@ -11,7 +11,7 @@ describe('get harmonic continuum segment stripe positions', () => {
 				basePattern: {
 					stripeSettings: {
 						stripePositionSettings: {
-							stripeCountSetting: 9,
+							stripeCount: 9,
 						},
 					},
 				},
