@@ -3,6 +3,7 @@ import * as animator from '../../../../../src/animation/animator'
 import { BLACK, TRANSPARENT } from '../../../../../src/constants'
 import { executeSelectedHoundstoothEffects } from '../../../../../src/execute/executeSelectedHoundstoothEffects'
 import { deepClone } from '../../../../../src/utilities/codeUtilities'
+import { NullarySideEffector } from '../../../../../src/utilities/types/NullarySideEffector'
 import { activateTestMarkerCanvas } from '../../../../../test/integration/helpers/activateTestMarkerCanvas'
 import { thisAnimationFrameOnly } from '../../../../../test/integration/helpers/thisFrameOnly'
 import { harmonitoothEffect } from '../../../effects/harmonitoothEffect'
@@ -19,11 +20,15 @@ describe('harmonitooth effect', () => {
 	}
 
 	beforeEach(() => {
-		spyOn(animator, 'default').and.callFake(({ animationFunction, stopConditionFunction }) => {
+		type FakeAnimator = (_: {
+			animationFunction: NullarySideEffector, stopConditionFunction: () => boolean,
+		}) => void
+		const fakeAnimator: FakeAnimator = ({ animationFunction, stopConditionFunction }) => {
 			while (!stopConditionFunction()) {
 				animationFunction()
 			}
-		})
+		}
+		spyOn(animator, 'default').and.callFake(fakeAnimator)
 	})
 
 	it('at frame 0, the striped squares have only a single stripe, so are solid', () => {
