@@ -1,12 +1,13 @@
 import { state, to } from '../../../../../src'
 import * as animator from '../../../../../src/animation/animator'
+import { ConditionFunction } from '../../../../../src/animation/types/ConditionFunction'
 import { BLACK, TRANSPARENT } from '../../../../../src/constants'
 import { executeSelectedHoundstoothEffects } from '../../../../../src/execute/executeSelectedHoundstoothEffects'
 import { Effect } from '../../../../../src/store/types/Effect'
 import { deepClone } from '../../../../../src/utilities/codeUtilities'
 import { NullarySideEffector } from '../../../../../src/utilities/types/NullarySideEffector'
 import { activateTestMarkerCanvas } from '../../../../../test/integration/helpers/activateTestMarkerCanvas'
-import { thisAnimationFrameOnly } from '../../../../../test/integration/helpers/thisFrameOnly'
+import { thisFrameOnly } from '../../../../../test/integration/helpers/thisFrameOnly'
 import { harmonitoothEffect } from '../../../effects/harmonitoothEffect'
 import { expectHarmonicStripedTile } from '../helpers/expectHarmonicStripedTile'
 import { expectWholeTile } from '../helpers/expectWholeTile'
@@ -22,7 +23,7 @@ describe('harmonitooth effect', () => {
 
 	beforeEach(() => {
 		type FakeAnimator = (_: {
-			animationFunction: NullarySideEffector, stopConditionFunction: () => boolean,
+			animationFunction: NullarySideEffector, stopConditionFunction: ConditionFunction,
 		}) => void
 		const fakeAnimator: FakeAnimator = ({ animationFunction, stopConditionFunction }) => {
 			while (!stopConditionFunction()) {
@@ -35,7 +36,7 @@ describe('harmonitooth effect', () => {
 	it('at frame 0, the striped squares have only a single stripe, so are solid', () => {
 		const houndstoothOverrides: Effect = deepClone(harmonitoothTestHoundstoothOverrides)
 		if (houndstoothOverrides.basePattern) {
-			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(to.Frame(0))
+			houndstoothOverrides.basePattern.animationSettings = thisFrameOnly(to.Frame(0))
 		}
 		state.selectedHoundstoothEffects = [ harmonitoothEffect ]
 		activateTestMarkerCanvas()
@@ -52,7 +53,7 @@ describe('harmonitooth effect', () => {
 	it('around frame 500, it has two harmonically proportioned stripes', () => {
 		const houndstoothOverrides: Effect = deepClone(harmonitoothTestHoundstoothOverrides)
 		if (houndstoothOverrides.basePattern) {
-			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(to.Frame(500))
+			houndstoothOverrides.basePattern.animationSettings = thisFrameOnly(to.Frame(500))
 		}
 		state.selectedHoundstoothEffects = [ harmonitoothEffect ]
 		activateTestMarkerCanvas()
@@ -69,7 +70,7 @@ describe('harmonitooth effect', () => {
 	it('around frame 650, it has three harmonically proportioned stripes', () => {
 		const houndstoothOverrides: Effect = deepClone(harmonitoothTestHoundstoothOverrides)
 		if (houndstoothOverrides.basePattern) {
-			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(to.Frame(650))
+			houndstoothOverrides.basePattern.animationSettings = thisFrameOnly(to.Frame(650))
 		}
 		state.selectedHoundstoothEffects = [ harmonitoothEffect ]
 		activateTestMarkerCanvas()
@@ -86,7 +87,7 @@ describe('harmonitooth effect', () => {
 	it('around frame 750, it has four harmonically proportioned stripes', () => {
 		const houndstoothOverrides: Effect = deepClone(harmonitoothTestHoundstoothOverrides)
 		if (houndstoothOverrides.basePattern) {
-			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(to.Frame(750))
+			houndstoothOverrides.basePattern.animationSettings = thisFrameOnly(to.Frame(750))
 		}
 		state.selectedHoundstoothEffects = [ harmonitoothEffect ]
 		activateTestMarkerCanvas()
@@ -103,7 +104,7 @@ describe('harmonitooth effect', () => {
 	it('around frame 800, it has two harmonically proportioned stripes', () => {
 		const houndstoothOverrides: Effect = deepClone(harmonitoothTestHoundstoothOverrides)
 		if (houndstoothOverrides.basePattern) {
-			houndstoothOverrides.basePattern.animationSettings = thisAnimationFrameOnly(to.Frame(800))
+			houndstoothOverrides.basePattern.animationSettings = thisFrameOnly(to.Frame(800))
 		}
 		state.selectedHoundstoothEffects = [ harmonitoothEffect ]
 		activateTestMarkerCanvas()
