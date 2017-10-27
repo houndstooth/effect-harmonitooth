@@ -3,7 +3,7 @@ import { iterator } from '../../../../../src/utilities/codeUtilities'
 import { pixelIsColorWithMarker } from '../../../../../test/integration/helpers/pixelIsColorWithMarker'
 
 const expectWholeTile: (_: {
-	color: Color, gridAddress: Address[],
+	color: Color, gridAddress: Address,
 }) => void = ({ color: expectedColor, gridAddress }) => {
 	iterator(12).forEach(check => {
 		const [ x, y ] = from.Address(gridAddress)
