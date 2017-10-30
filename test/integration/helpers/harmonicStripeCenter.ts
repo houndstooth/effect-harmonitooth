@@ -1,16 +1,25 @@
-import { Coordinate, to } from '../../../../../src'
+import { Coordinate, from, to } from '../../../../../src'
+import { Unit } from '../../../../../src/components/types'
 import { iterator } from '../../../../../src/utilities/codeUtilities'
 
-type HarmonicStripeCenter = (_: { diagonalAddress: number, index: number, total: number }) => Coordinate
-
-const harmonicStripeCenter: HarmonicStripeCenter = ({ diagonalAddress, index, total }) => {
-	const fullProportions = iterator(total).reduce((sum, val) => sum + 1 / (val + 2), 0)
-	const thisProportion = iterator(index).reduce((sum, val) => sum + 1 / (val + 2), 0)
-	const adjustForHalf = 1 / ((index + 2) * 2)
-	const coordinate = (thisProportion - adjustForHalf) / fullProportions
-	const coordinateScaledAndTransposed = (diagonalAddress + coordinate) * 50
-
-	return to.Coordinate([ coordinateScaledAndTransposed, coordinateScaledAndTransposed ])
+interface HarmonicStripeCenterParams {
+	diagonalAddress: number,
+	index: number,
+	total: number
 }
+
+const harmonicStripeCenter: (_: HarmonicStripeCenterParams) => Coordinate =
+	({ diagonalAddress, index, total }: HarmonicStripeCenterParams): Coordinate => {
+		const fullProportions: number = iterator(total).reduce(proportions, 0)
+		const thisProportion: number = iterator(index).reduce(proportions, 0)
+		const adjustForHalf: number = 1 / ((index + 2) * 2)
+		const units: Unit = to.Unit((thisProportion - adjustForHalf) / fullProportions)
+		const unitsScaledAndTransposed: Unit = to.Unit((diagonalAddress + from.Unit(units)) * 50)
+
+		return to.Coordinate([ unitsScaledAndTransposed, unitsScaledAndTransposed ])
+	}
+
+const proportions: (sum: number, val: number) => number =
+	(sum: number, val: number): number => sum + 1 / (val + 2)
 
 export { harmonicStripeCenter }

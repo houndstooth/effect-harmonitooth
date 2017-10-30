@@ -21,14 +21,14 @@ describe('harmonitooth effect', () => {
 	}
 
 	beforeEach(() => {
-		type FakeAnimator = (_: {
-			animationFunction: NullarySideEffector, stopConditionFunction: ConditionFunction,
-		}) => void
-		const fakeAnimator: FakeAnimator = ({ animationFunction, stopConditionFunction }) => {
-			while (!stopConditionFunction()) {
-				animationFunction()
+		interface FakeAnimatorParams { animationFunction: NullarySideEffector, stopConditionFunction: ConditionFunction }
+		type FakeAnimator = (_: FakeAnimatorParams) => void
+		const fakeAnimator: FakeAnimator =
+			({ animationFunction, stopConditionFunction }: FakeAnimatorParams): void => {
+				while (!stopConditionFunction()) {
+					animationFunction()
+				}
 			}
-		}
 		spyOn(animator, 'default').and.callFake(fakeAnimator)
 	})
 
