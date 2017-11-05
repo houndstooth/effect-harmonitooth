@@ -13,7 +13,7 @@ import { expectWholeTile } from '../helpers/expectWholeTile'
 describe('harmonitooth effect', () => {
 	const harmonitoothTestHoundstoothOverrides: Effect = {
 		basePattern: {
-			gridSettings: { gridSize: 2 },
+			gridSettings: { tileResolution: 2 },
 			tileSettings: { tileSize: to.Unit(50) },
 			viewSettings: { canvasSize: to.Px(100) },
 		},
