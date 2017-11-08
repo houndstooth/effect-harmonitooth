@@ -1,6 +1,6 @@
-import { to } from '../../../../../../src'
-import { composeMainHoundstooth } from '../../../../../../src/execute/composeMainHoundstooth'
-import { getHarmonicContinuumStripePositions } from '../../../../src/components/getHarmonicContinuumStripePositions'
+import { composeMainHoundstooth } from '../../../../../src/app/execute/composeMainHoundstooth'
+import * as to from '../../../../../src/to'
+import { getHarmonicContinuumStripePositions } from '../../../pattern/stripe/getHarmonicContinuumStripePositions'
 
 describe('get harmonic continuum stripe positions', () => {
 	// tslint:disable-next-line:max-line-length

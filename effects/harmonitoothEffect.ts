@@ -1,5 +1,5 @@
 import { Effect, standardAnimation } from '../../../src'
-import { getHarmonicContinuumStripePositions } from '../src'
+import { getHarmonicContinuumStripePositions } from '../pattern'
 
 const harmonitoothEffect: Effect = {
 	animationsPattern: {

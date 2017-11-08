@@ -1,5 +1,7 @@
-import { Coordinate, from, to } from '../../../../../src'
-import { Unit } from '../../../../../src/components/types'
+import { Coordinate } from '../../../../../src'
+import * as from from '../../../../../src/from'
+import { Unit } from '../../../../../src/pattern/grid/types'
+import * as to from '../../../../../src/to'
 import { iterator } from '../../../../../src/utilities/codeUtilities'
 
 interface HarmonicStripeCenterParams {

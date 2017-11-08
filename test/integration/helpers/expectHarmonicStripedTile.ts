@@ -1,6 +1,6 @@
 import { Color } from '../../../../../src'
 import { BLACK, TRANSPARENT } from '../../../../../src/constants'
-import { Coordinate } from '../../../../../src/space/types'
+import { Coordinate } from '../../../../../src/pattern/stripe/types'
 import { iterator } from '../../../../../src/utilities/codeUtilities'
 import { pixelIsColorWithMarker } from '../../../../../test/integration/helpers/pixelIsColorWithMarker'
 import { harmonicStripeCenter } from './harmonicStripeCenter'

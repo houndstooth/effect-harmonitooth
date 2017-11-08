@@ -1,5 +1,7 @@
-import { Address, Color, from, to } from '../../../../../src'
-import { Coordinate } from '../../../../../src/space/types'
+import { Address, Color } from '../../../../../src'
+import * as from from '../../../../../src/from'
+import { Coordinate } from '../../../../../src/pattern/stripe/types'
+import * as to from '../../../../../src/to'
 import { iterator } from '../../../../../src/utilities/codeUtilities'
 import { pixelIsColorWithMarker } from '../../../../../test/integration/helpers/pixelIsColorWithMarker'
 
