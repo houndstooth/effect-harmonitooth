@@ -1,5 +1,4 @@
-import { GetStripePosition, GetStripePositions, mathUtilities, perStripe, StripePosition } from '../../../../src'
-import * as to from '../../../../src/to'
+import { GetStripePosition, GetStripePositions, mathUtilities, perStripe, StripePosition, to } from '../../../../src'
 
 const getHarmonicContinuumStripePositions: GetStripePositions =
 	(): StripePosition[] => perStripe({ getStripePosition: harmonicContinuumStripePosition })
