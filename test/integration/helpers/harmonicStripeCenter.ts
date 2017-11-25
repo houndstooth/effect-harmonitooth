@@ -1,8 +1,4 @@
-import { Coordinate } from '../../../../../src'
-import * as from from '../../../../../src/from'
-import { Unit } from '../../../../../src/pattern/grid/types'
-import * as to from '../../../../../src/to'
-import { iterator } from '../../../../../src/utilities/codeUtilities'
+import { codeUtilities, Coordinate, from, to, Unit } from '../../../../../src'
 
 interface HarmonicStripeCenterParams {
 	diagonalAddress: number,
@@ -12,8 +8,8 @@ interface HarmonicStripeCenterParams {
 
 const harmonicStripeCenter: (_: HarmonicStripeCenterParams) => Coordinate =
 	({ diagonalAddress, index, total }: HarmonicStripeCenterParams): Coordinate => {
-		const fullProportions: number = iterator(total).reduce(proportions, 0)
-		const thisProportion: number = iterator(index).reduce(proportions, 0)
+		const fullProportions: number = codeUtilities.iterator(total).reduce(proportions, 0)
+		const thisProportion: number = codeUtilities.iterator(index).reduce(proportions, 0)
 		const adjustForHalf: number = 1 / ((index + 2) * 2)
 		const units: Unit = to.Unit((thisProportion - adjustForHalf) / fullProportions)
 		const unitsScaledAndTransposed: Unit = to.Unit((diagonalAddress + from.Unit(units)) * 50)
