@@ -32,7 +32,7 @@ describe('harmonitooth effect', () => {
 			basePattern: { animationSettings: thisFrameOnly(to.Frame(0)) },
 		}
 
-		executeSelectedHoundstoothEffects({ houndstoothOverrides })
+		executeSelectedHoundstoothEffects.main({ houndstoothOverrides })
 
 		setTimeout(() => {
 			expectWholeTile({ color: TRANSPARENT, gridAddress: to.Address([ 0, 0 ]) })
@@ -50,7 +50,7 @@ describe('harmonitooth effect', () => {
 			basePattern: { animationSettings: thisFrameOnly(to.Frame(500)) },
 		}
 
-		executeSelectedHoundstoothEffects({ houndstoothOverrides })
+		executeSelectedHoundstoothEffects.main({ houndstoothOverrides })
 
 		setTimeout(() => {
 			expectHarmonicStripedTile({ stripeCount: 2, color: TRANSPARENT, diagonalAddress: 0 })
@@ -67,7 +67,7 @@ describe('harmonitooth effect', () => {
 			basePattern: { animationSettings: thisFrameOnly(to.Frame(650)) },
 		}
 
-		executeSelectedHoundstoothEffects({ houndstoothOverrides })
+		executeSelectedHoundstoothEffects.main({ houndstoothOverrides })
 
 		setTimeout(() => {
 			expectHarmonicStripedTile({ stripeCount: 3, color: TRANSPARENT, diagonalAddress: 0 })
@@ -85,7 +85,7 @@ describe('harmonitooth effect', () => {
 			basePattern: { animationSettings: thisFrameOnly(to.Frame(750)) },
 		}
 
-		executeSelectedHoundstoothEffects({ houndstoothOverrides })
+		executeSelectedHoundstoothEffects.main({ houndstoothOverrides })
 
 		setTimeout(() => {
 			expectHarmonicStripedTile({ stripeCount: 4, color: TRANSPARENT, diagonalAddress: 0 })
@@ -103,7 +103,7 @@ describe('harmonitooth effect', () => {
 			basePattern: { animationSettings: thisFrameOnly(to.Frame(800)) },
 		}
 
-		executeSelectedHoundstoothEffects({ houndstoothOverrides })
+		executeSelectedHoundstoothEffects.main({ houndstoothOverrides })
 
 		setTimeout(() => {
 			expectHarmonicStripedTile({ stripeCount: 5, color: TRANSPARENT, diagonalAddress: 0 })

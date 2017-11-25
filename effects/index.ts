@@ -1,3 +1,1 @@
-import { harmonitoothEffect } from './harmonitoothEffect'
-
-export { harmonitoothEffect }
+export { harmonitoothEffect } from './harmonitoothEffect'

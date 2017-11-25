@@ -1,7 +1,7 @@
 import { GetStripePosition, GetStripePositions, mathUtilities, perStripe, StripePosition, to } from '../../../../src'
 
 const getHarmonicContinuumSegmentStripePositions: GetStripePositions =
-	(): StripePosition[] => perStripe({ getStripePosition: harmonicContinuumSegmentStripePosition })
+	(): StripePosition[] => perStripe.main({ getStripePosition: harmonicContinuumSegmentStripePosition })
 
 const harmonicContinuumSegmentStripePosition: GetStripePosition =
 	({ stripeCount, stripeIndex }: { stripeCount: number, stripeIndex: number }): StripePosition => {
@@ -12,4 +12,4 @@ const harmonicContinuumSegmentStripePosition: GetStripePosition =
 		return to.StripePosition(currentStripePosition - previousStripePosition)
 	}
 
-export { getHarmonicContinuumSegmentStripePositions }
+export { getHarmonicContinuumSegmentStripePositions as main }
