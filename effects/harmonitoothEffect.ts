@@ -5,14 +5,14 @@ const harmonitoothEffect: Effect = {
 	animationsPattern: {
 		stripeSettings: {
 			stripePositionSettings: {
-				stripeCount: standardAnimation.main,
+				stripeCount: standardAnimation.default,
 			},
 		},
 	},
 	basePattern: {
 		stripeSettings: {
 			stripePositionSettings: {
-				getStripePositions: getHarmonicContinuumStripePositions.main,
+				getStripePositions: getHarmonicContinuumStripePositions.default,
 				stripeCount: 1,
 			},
 		},
