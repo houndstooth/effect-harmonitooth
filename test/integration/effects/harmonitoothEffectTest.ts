@@ -61,10 +61,10 @@ describe('harmonitooth effect', () => {
 		},         0)
 	})
 
-	it('around frame 650, it has three harmonically proportioned stripes', async (done: DoneFn) => {
+	it('around frame 1000, it has three harmonically proportioned stripes', async (done: DoneFn) => {
 		const houndstoothOverrides: Effect = {
 			...harmonitoothTestHoundstoothOverrides,
-			basePattern: { animationSettings: thisFrameOnly(to.Frame(650)) },
+			basePattern: { animationSettings: thisFrameOnly(to.Frame(1000)) },
 		}
 
 		executeSelectedHoundstoothEffects.default({ houndstoothOverrides })
@@ -79,10 +79,10 @@ describe('harmonitooth effect', () => {
 		},         0)
 	})
 
-	it('around frame 750, it has four harmonically proportioned stripes', async (done: DoneFn) => {
+	it('around frame 1250, it has four harmonically proportioned stripes', async (done: DoneFn) => {
 		const houndstoothOverrides: Effect = {
 			...harmonitoothTestHoundstoothOverrides,
-			basePattern: { animationSettings: thisFrameOnly(to.Frame(750)) },
+			basePattern: { animationSettings: thisFrameOnly(to.Frame(1250)) },
 		}
 
 		executeSelectedHoundstoothEffects.default({ houndstoothOverrides })
@@ -97,10 +97,10 @@ describe('harmonitooth effect', () => {
 		},         0)
 	})
 
-	it('around frame 800, it has five harmonically proportioned stripes', async (done: DoneFn) => {
+	it('around frame 1500, it has five harmonically proportioned stripes', async (done: DoneFn) => {
 		const houndstoothOverrides: Effect = {
 			...harmonitoothTestHoundstoothOverrides,
-			basePattern: { animationSettings: thisFrameOnly(to.Frame(800)) },
+			basePattern: { animationSettings: thisFrameOnly(to.Frame(1500)) },
 		}
 
 		executeSelectedHoundstoothEffects.default({ houndstoothOverrides })

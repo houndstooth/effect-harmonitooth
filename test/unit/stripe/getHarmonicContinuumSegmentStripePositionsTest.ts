@@ -1,21 +1,11 @@
-import { composeMainHoundstooth, to } from '../../../../../src'
+import { setSetting, to } from '../../../../../src'
 // tslint:disable-next-line:max-line-length
 import { getHarmonicContinuumSegmentStripePositions } from '../../../pattern'
 
 describe('get harmonic continuum segment stripe positions', () => {
 	// tslint:disable-next-line:max-line-length
 	it('can calculate the same information that the gingham chevron continuum stripe positions can, just each tile individually figures itself out, inferring its position in the whole from its stripe count', () => {
-		composeMainHoundstooth.default({
-			houndstoothOverrides: {
-				basePattern: {
-					stripeSettings: {
-						stripePositionSettings: {
-							stripeCount: 9,
-						},
-					},
-				},
-			},
-		})
+		setSetting.default('stripeCount', 9)
 
 		expect(getHarmonicContinuumSegmentStripePositions.default()).toEqual(to.StripePositions([
 			0,
