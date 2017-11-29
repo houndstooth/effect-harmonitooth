@@ -1,6 +1,6 @@
 import { codeUtilities, Color, constants, Coordinate } from '../../../../../src'
 import { pixelIsColorWithMarker } from '../../../../../test'
-import { harmonicStripeCenter } from './harmonicStripeCenter'
+import harmonicStripeCenter from './harmonicStripeCenter'
 import { ExpectHarmonicStripedTileParams } from './types'
 
 const { BLACK, TRANSPARENT } = constants
@@ -18,4 +18,4 @@ const expectHarmonicStripedTile: (_: ExpectHarmonicStripedTileParams) => void =
 		})
 	}
 
-export { expectHarmonicStripedTile }
+export default expectHarmonicStripedTile

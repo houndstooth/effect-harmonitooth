@@ -1,5 +1,5 @@
-import { expectHarmonicStripedTile } from './expectHarmonicStripedTile'
-import { expectWholeTile } from './expectWholeTile'
+import expectHarmonicStripedTile from './expectHarmonicStripedTile'
+import expectWholeTile from './expectWholeTile'
 
 export {
 	expectHarmonicStripedTile,

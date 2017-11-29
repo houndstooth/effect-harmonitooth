@@ -20,4 +20,4 @@ const harmonicStripeCenter: (_: HarmonicStripeCenterParams) => Coordinate =
 const proportions: (sum: number, val: number) => number =
 	(sum: number, val: number): number => sum + 1 / (val + 2)
 
-export { harmonicStripeCenter }
+export default harmonicStripeCenter

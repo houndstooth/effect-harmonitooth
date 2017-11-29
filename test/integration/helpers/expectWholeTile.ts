@@ -13,4 +13,4 @@ const expectWholeTile: (_: { color: Color, gridAddress: Address }) => void =
 		})
 	}
 
-export { expectWholeTile }
+export default expectWholeTile
