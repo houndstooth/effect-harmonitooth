@@ -1,5 +1,5 @@
 import { animator, constants, Effect, executeSelectedHoundstoothEffects, state, to } from '../../../../../src'
-import { activateTestMarkerCanvas, fakeAnimator, thisFrameOnly } from '../../../../../test'
+import { fakeAnimator, thisFrameOnly } from '../../../../../test'
 import { harmonitoothEffect } from '../../../effects'
 import { expectHarmonicStripedTile, expectWholeTile } from '../helpers'
 
@@ -18,7 +18,6 @@ describe('harmonitooth effect', () => {
 		spyOn(animator, 'default').and.callFake(fakeAnimator)
 		state.currentFrame = to.Frame(0)
 		state.selectedHoundstoothEffects = [ harmonitoothEffect ]
-		activateTestMarkerCanvas()
 		state.animating = true
 	})
 
