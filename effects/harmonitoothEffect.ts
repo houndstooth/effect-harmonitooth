@@ -1,7 +1,7 @@
-import { Effect, standardAnimation } from '../../../src'
+import { NamedEffect, standardAnimation } from '../../../src'
 import { getHarmonicContinuumStripePositions } from '../pattern'
 
-const harmonitoothEffect: Effect = {
+const harmonitoothEffect: NamedEffect = {
 	animationsPattern: {
 		stripeSettings: {
 			stripePositionSettings: {
