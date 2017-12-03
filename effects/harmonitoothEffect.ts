@@ -1,5 +1,6 @@
 import { NamedEffect, standardAnimation } from '../../../src'
 import { getHarmonicContinuumStripePositions } from '../pattern'
+import HARMONITOOTH_DESCRIPTION from './harmonitoothDescription'
 
 const harmonitoothEffect: NamedEffect = {
 	animationsPattern: {
@@ -17,6 +18,7 @@ const harmonitoothEffect: NamedEffect = {
 			},
 		},
 	},
+	description: HARMONITOOTH_DESCRIPTION,
 	name: 'harmonitooth',
 }
 
