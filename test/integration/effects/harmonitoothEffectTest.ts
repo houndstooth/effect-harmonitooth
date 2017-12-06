@@ -9,7 +9,6 @@ describe('harmonitooth effect', () => {
 		basePattern: {
 			gridSettings: { tileResolution: 2 },
 			tileSettings: { tileSize: to.Unit(50) },
-			viewSettings: { canvasSize: to.Px(100) },
 		},
 	}
 
