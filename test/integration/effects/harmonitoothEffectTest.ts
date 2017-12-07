@@ -1,4 +1,4 @@
-import { constants, Effect, executeSelectedHoundstoothEffects, state, to } from '../../../../../src'
+import { appState, constants, Effect, executeSelectedHoundstoothEffects, to } from '../../../../../src'
 import { harmonitoothEffect } from '../../../effects'
 import { expectHarmonicStripedTile, expectWholeTile } from '../helpers'
 
@@ -13,11 +13,11 @@ describe('harmonitooth effect', () => {
 	}
 
 	beforeEach(() => {
-		state.controls.selectedHoundstoothEffects = [ harmonitoothEffect ]
+		appState.controls.selectedHoundstoothEffects = [ harmonitoothEffect ]
 	})
 
 	it('at frame 0, the striped squares have only a single stripe, so are solid', async (done: DoneFn) => {
-		state.controls.currentFrame = to.Frame(0)
+		appState.controls.currentFrame = to.Frame(0)
 
 		executeSelectedHoundstoothEffects.default({ houndstoothOverrides })
 
@@ -32,7 +32,7 @@ describe('harmonitooth effect', () => {
 	})
 
 	it('around frame 500, it has two harmonically proportioned stripes', async (done: DoneFn) => {
-		state.controls.currentFrame = to.Frame(500)
+		appState.controls.currentFrame = to.Frame(500)
 
 		executeSelectedHoundstoothEffects.default({ houndstoothOverrides })
 
@@ -46,7 +46,7 @@ describe('harmonitooth effect', () => {
 	})
 
 	it('around frame 1000, it has three harmonically proportioned stripes', async (done: DoneFn) => {
-		state.controls.currentFrame = to.Frame(1000)
+		appState.controls.currentFrame = to.Frame(1000)
 
 		executeSelectedHoundstoothEffects.default({ houndstoothOverrides })
 
@@ -61,7 +61,7 @@ describe('harmonitooth effect', () => {
 	})
 
 	it('around frame 1250, it has four harmonically proportioned stripes', async (done: DoneFn) => {
-		state.controls.currentFrame = to.Frame(1250)
+		appState.controls.currentFrame = to.Frame(1250)
 
 		executeSelectedHoundstoothEffects.default({ houndstoothOverrides })
 
@@ -76,7 +76,7 @@ describe('harmonitooth effect', () => {
 	})
 
 	it('around frame 1500, it has five harmonically proportioned stripes', async (done: DoneFn) => {
-		state.controls.currentFrame = to.Frame(1500)
+		appState.controls.currentFrame = to.Frame(1500)
 
 		executeSelectedHoundstoothEffects.default({ houndstoothOverrides })
 
