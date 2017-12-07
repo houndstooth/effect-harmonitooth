@@ -1,10 +1,5 @@
 import { codeUtilities, Coordinate, from, to, Unit } from '../../../../../src'
-
-interface HarmonicStripeCenterParams {
-	diagonalAddress: number,
-	index: number,
-	total: number
-}
+import { HarmonicStripeCenterParams, HarmonicStripeProportions } from './types'
 
 const harmonicStripeCenter: (_: HarmonicStripeCenterParams) => Coordinate =
 	({ diagonalAddress, index, total }: HarmonicStripeCenterParams): Coordinate => {
@@ -17,7 +12,7 @@ const harmonicStripeCenter: (_: HarmonicStripeCenterParams) => Coordinate =
 		return to.Coordinate([ unitsScaledAndTransposed, unitsScaledAndTransposed ])
 	}
 
-const proportions: (sum: number, val: number) => number =
+const proportions: HarmonicStripeProportions =
 	(sum: number, val: number): number => sum + 1 / (val + 2)
 
 export default harmonicStripeCenter
