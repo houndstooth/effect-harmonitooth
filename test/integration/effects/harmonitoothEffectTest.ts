@@ -1,7 +1,7 @@
 import { constants, Effect, executeSelectedEffects, to } from '../../../../../src/indexForTest'
+import { setAppStateForEffectTests } from '../../../../../test'
 import { harmonitoothEffect } from '../../../effects'
 import { expectHarmonicStripedTile, expectWholeTile } from '../helpers'
-import { setAppStateForEffectTests } from '../../../../../test'
 
 const { BLACK, TRANSPARENT } = constants
 
