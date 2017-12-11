@@ -1,6 +1,7 @@
-import { appState, constants, Effect, executeSelectedEffects, to } from '../../../../../src/indexForTest'
+import { constants, Effect, executeSelectedEffects, to } from '../../../../../src/indexForTest'
 import { harmonitoothEffect } from '../../../effects'
 import { expectHarmonicStripedTile, expectWholeTile } from '../helpers'
+import { setAppStateForEffectTests } from '../../../../../test'
 
 const { BLACK, TRANSPARENT } = constants
 
@@ -13,11 +14,11 @@ describe('harmonitooth effect', () => {
 	}
 
 	beforeEach(() => {
-		appState.controls.selectedEffects = [ harmonitoothEffect ]
+		setAppStateForEffectTests.setSelectedEffects([ harmonitoothEffect ])
 	})
 
 	it('at frame 0, the striped squares have only a single stripe, so are solid', async (done: DoneFn) => {
-		appState.controls.currentFrame = to.Frame(0)
+		setAppStateForEffectTests.setCurrentFrame(to.Frame(0))
 
 		executeSelectedEffects.default({ overrides })
 
@@ -32,7 +33,7 @@ describe('harmonitooth effect', () => {
 	})
 
 	it('around frame 500, it has two harmonically proportioned stripes', async (done: DoneFn) => {
-		appState.controls.currentFrame = to.Frame(500)
+		setAppStateForEffectTests.setCurrentFrame(to.Frame(500))
 
 		executeSelectedEffects.default({ overrides })
 
@@ -46,7 +47,7 @@ describe('harmonitooth effect', () => {
 	})
 
 	it('around frame 1000, it has three harmonically proportioned stripes', async (done: DoneFn) => {
-		appState.controls.currentFrame = to.Frame(1000)
+		setAppStateForEffectTests.setCurrentFrame(to.Frame(1000))
 
 		executeSelectedEffects.default({ overrides })
 
@@ -61,7 +62,7 @@ describe('harmonitooth effect', () => {
 	})
 
 	it('around frame 1250, it has four harmonically proportioned stripes', async (done: DoneFn) => {
-		appState.controls.currentFrame = to.Frame(1250)
+		setAppStateForEffectTests.setCurrentFrame(to.Frame(1250))
 
 		executeSelectedEffects.default({ overrides })
 
@@ -76,7 +77,7 @@ describe('harmonitooth effect', () => {
 	})
 
 	it('around frame 1500, it has five harmonically proportioned stripes', async (done: DoneFn) => {
-		appState.controls.currentFrame = to.Frame(1500)
+		setAppStateForEffectTests.setCurrentFrame(to.Frame(1500))
 
 		executeSelectedEffects.default({ overrides })
 
