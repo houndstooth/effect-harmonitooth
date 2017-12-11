@@ -1,4 +1,4 @@
-import { Address, codeUtilities, Color, Coordinate, from, to } from '../../../../../src'
+import { Address, codeUtilities, Color, Coordinate, from, to } from '../../../../../src/indexForTest'
 import { pixelIsColorWithMarker } from '../../../../../test'
 
 const expectWholeTile: (_: { color: Color, gridAddress: Address }) => void =

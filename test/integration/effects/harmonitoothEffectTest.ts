@@ -1,4 +1,4 @@
-import { appState, constants, Effect, executeSelectedEffects, to } from '../../../../../src'
+import { appState, constants, Effect, executeSelectedEffects, to } from '../../../../../src/indexForTest'
 import { harmonitoothEffect } from '../../../effects'
 import { expectHarmonicStripedTile, expectWholeTile } from '../helpers'
 

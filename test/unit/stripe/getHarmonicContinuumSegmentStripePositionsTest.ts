@@ -1,4 +1,4 @@
-import { GetStripePositions, to } from '../../../../../src'
+import { GetStripePositions, to } from '../../../../../src/indexForTest'
 import { setPatternSettingForTest } from '../../../../../test'
 // tslint:disable-next-line:max-line-length
 import { getHarmonicContinuumSegmentStripePositions } from '../../../pattern'

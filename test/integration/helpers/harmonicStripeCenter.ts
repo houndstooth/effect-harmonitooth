@@ -1,4 +1,4 @@
-import { codeUtilities, Coordinate, from, to, Unit } from '../../../../../src'
+import { codeUtilities, Coordinate, from, to, Unit } from '../../../../../src/indexForTest'
 import { HarmonicStripeCenterParams, HarmonicStripeProportions } from './types'
 
 const harmonicStripeCenter: (_: HarmonicStripeCenterParams) => Coordinate =

@@ -1,4 +1,4 @@
-import { GetStripePositions, to } from '../../../../../src'
+import { GetStripePositions, to } from '../../../../../src/indexForTest'
 import { setPatternSettingForTest } from '../../../../../test'
 import { getHarmonicContinuumStripePositions } from '../../../pattern'
 

@@ -1,4 +1,4 @@
-import { Color } from '../../../../../src'
+import { Color } from '../../../../../src/indexForTest'
 
 interface ExpectHarmonicStripedTileParams { color: Color, diagonalAddress: number, stripeCount: number }
 

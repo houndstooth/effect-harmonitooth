@@ -1,4 +1,4 @@
-import { codeUtilities, Color, constants, Coordinate } from '../../../../../src'
+import { codeUtilities, Color, constants, Coordinate } from '../../../../../src/indexForTest'
 import { pixelIsColorWithMarker } from '../../../../../test'
 import harmonicStripeCenter from './harmonicStripeCenter'
 import { ExpectHarmonicStripedTileParams } from './types'
