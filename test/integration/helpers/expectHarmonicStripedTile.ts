@@ -1,9 +1,7 @@
-import { codeUtilities, Color, constants, Coordinate } from '../../../../../src/indexForTest'
+import { BLACK, codeUtilities, Color, Coordinate, TRANSPARENT } from '../../../../../src/indexForTest'
 import { pixelIsColorWithMarker } from '../../../../../test'
 import harmonicStripeCenter from './harmonicStripeCenter'
 import { ExpectHarmonicStripedTileParams } from './types'
-
-const { BLACK, TRANSPARENT } = constants
 
 const expectHarmonicStripedTile: (_: ExpectHarmonicStripedTileParams) => void =
 	({ color, diagonalAddress, stripeCount }: ExpectHarmonicStripedTileParams): void => {
