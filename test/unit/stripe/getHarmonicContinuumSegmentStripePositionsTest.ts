@@ -2,11 +2,11 @@ import { GetStripePositions, patternState, to } from '../../../../../src/indexFo
 // tslint:disable-next-line:max-line-length
 import { getHarmonicContinuumSegmentStripePositions } from '../../../pattern'
 
-const subject: GetStripePositions = getHarmonicContinuumSegmentStripePositions.default
-
 describe('get harmonic continuum segment stripe positions', () => {
 	// tslint:disable-next-line:max-line-length
 	it('can calculate the same information that the gingham chevron continuum stripe positions can, just each tile individually figures itself out, inferring its position in the whole from its stripe count', () => {
+		const subject: GetStripePositions = getHarmonicContinuumSegmentStripePositions.default
+
 		patternState.stripeSettings.stripePositionSettings.stripeCount = 9
 
 		expect(subject()).toEqual(to.StripePositions([
