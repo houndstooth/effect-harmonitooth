@@ -1,24 +1,23 @@
-import { BLACK, Effect, executeSelectedEffects, to, TRANSPARENT } from '../../../../../src/indexForTest'
+import { BLACK, executeSelectedEffects, to, TRANSPARENT } from '../../../../../src/indexForTest'
 import { setAppStateForEffectTests } from '../../../../../test'
 import { harmonitoothEffect } from '../../../effects'
 import { expectHarmonicStripedTile, expectWholeTile } from '../helpers'
 
 describe('harmonitooth effect', () => {
-	const overrides: Effect = {
-		basePattern: {
-			gridSettings: { tileResolution: 2 },
-			tileSettings: { tileSize: to.Unit(50) },
-		},
-	}
-
 	beforeEach(() => {
 		setAppStateForEffectTests.setSelectedEffects([ harmonitoothEffect ])
+		setAppStateForEffectTests.setOverrides({
+			basePattern: {
+				gridSettings: { tileResolution: 2 },
+				tileSettings: { tileSize: to.Unit(50) },
+			},
+		})
 	})
 
 	it('at frame 0, the striped squares have only a single stripe, so are solid', async (done: DoneFn) => {
 		setAppStateForEffectTests.setCurrentFrame(to.Frame(0))
 
-		executeSelectedEffects.default({ overrides })
+		executeSelectedEffects.default()
 
 		setTimeout(() => {
 			expectWholeTile({ color: TRANSPARENT, address: to.Address([ 0, 0 ]) })
@@ -33,7 +32,7 @@ describe('harmonitooth effect', () => {
 	it('around frame 500, it has two harmonically proportioned stripes', async (done: DoneFn) => {
 		setAppStateForEffectTests.setCurrentFrame(to.Frame(500))
 
-		executeSelectedEffects.default({ overrides })
+		executeSelectedEffects.default()
 
 		setTimeout(() => {
 			expectHarmonicStripedTile({ stripeCount: 2, color: TRANSPARENT, diagonalAddress: 0 })
@@ -47,7 +46,7 @@ describe('harmonitooth effect', () => {
 	it('around frame 1000, it has three harmonically proportioned stripes', async (done: DoneFn) => {
 		setAppStateForEffectTests.setCurrentFrame(to.Frame(1000))
 
-		executeSelectedEffects.default({ overrides })
+		executeSelectedEffects.default()
 
 		setTimeout(() => {
 			expectHarmonicStripedTile({ stripeCount: 3, color: TRANSPARENT, diagonalAddress: 0 })
@@ -62,7 +61,7 @@ describe('harmonitooth effect', () => {
 	it('around frame 1250, it has four harmonically proportioned stripes', async (done: DoneFn) => {
 		setAppStateForEffectTests.setCurrentFrame(to.Frame(1250))
 
-		executeSelectedEffects.default({ overrides })
+		executeSelectedEffects.default()
 
 		setTimeout(() => {
 			expectHarmonicStripedTile({ stripeCount: 4, color: TRANSPARENT, diagonalAddress: 0 })
@@ -77,7 +76,7 @@ describe('harmonitooth effect', () => {
 	it('around frame 1500, it has five harmonically proportioned stripes', async (done: DoneFn) => {
 		setAppStateForEffectTests.setCurrentFrame(to.Frame(1500))
 
-		executeSelectedEffects.default({ overrides })
+		executeSelectedEffects.default()
 
 		setTimeout(() => {
 			expectHarmonicStripedTile({ stripeCount: 5, color: TRANSPARENT, diagonalAddress: 0 })
