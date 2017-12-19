@@ -14,7 +14,6 @@ const harmonitoothEffect: NamedEffect = {
 		stripeSettings: {
 			stripePositionSettings: {
 				getStripePositions: getHarmonicContinuumStripePositions.default,
-				stripeCount: 1,
 			},
 		},
 	},
