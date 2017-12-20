@@ -5,7 +5,8 @@ import { expectHarmonicStripedTile, expectWholeTile } from '../helpers'
 
 describe('harmonitooth effect', () => {
 	beforeEach(() => {
-		setAppStateForEffectTests.setSelectedEffects([ harmonitoothEffect ])
+		setAppStateForEffectTests.setAvailableEffects({ harmonitooth: harmonitoothEffect })
+		setAppStateForEffectTests.setSelectedEffects([ 'harmonitooth' ])
 		setAppStateForEffectTests.setOverrides({
 			basePattern: {
 				gridSettings: { tileResolution: 2 },
