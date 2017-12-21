@@ -1,4 +1,4 @@
-import { BLACK, executePattern, to, TRANSPARENT } from '../../../../../src/indexForTest'
+import { BLACK, executeEffect, to, TRANSPARENT } from '../../../../../src/indexForTest'
 import { setAppStateForEffectTests } from '../../../../../test'
 import { harmonitoothEffect } from '../../../effects'
 import { expectHarmonicStripedTile, expectWholeTile } from '../helpers'
@@ -18,7 +18,7 @@ describe('harmonitooth effect', () => {
 	it('at frame 0, the striped squares have only a single stripe, so are solid', async (done: DoneFn) => {
 		setAppStateForEffectTests.setCurrentFrame(to.Frame(0))
 
-		executePattern.default()
+		executeEffect.default()
 
 		setTimeout(() => {
 			expectWholeTile({ color: TRANSPARENT, address: to.Address([ 0, 0 ]) })
@@ -33,7 +33,7 @@ describe('harmonitooth effect', () => {
 	it('around frame 500, it has two harmonically proportioned stripes', async (done: DoneFn) => {
 		setAppStateForEffectTests.setCurrentFrame(to.Frame(500))
 
-		executePattern.default()
+		executeEffect.default()
 
 		setTimeout(() => {
 			expectHarmonicStripedTile({ stripeCount: 2, color: TRANSPARENT, diagonalAddress: 0 })
@@ -47,7 +47,7 @@ describe('harmonitooth effect', () => {
 	it('around frame 1000, it has three harmonically proportioned stripes', async (done: DoneFn) => {
 		setAppStateForEffectTests.setCurrentFrame(to.Frame(1000))
 
-		executePattern.default()
+		executeEffect.default()
 
 		setTimeout(() => {
 			expectHarmonicStripedTile({ stripeCount: 3, color: TRANSPARENT, diagonalAddress: 0 })
@@ -62,7 +62,7 @@ describe('harmonitooth effect', () => {
 	it('around frame 1250, it has four harmonically proportioned stripes', async (done: DoneFn) => {
 		setAppStateForEffectTests.setCurrentFrame(to.Frame(1250))
 
-		executePattern.default()
+		executeEffect.default()
 
 		setTimeout(() => {
 			expectHarmonicStripedTile({ stripeCount: 4, color: TRANSPARENT, diagonalAddress: 0 })
@@ -77,7 +77,7 @@ describe('harmonitooth effect', () => {
 	it('around frame 1500, it has five harmonically proportioned stripes', async (done: DoneFn) => {
 		setAppStateForEffectTests.setCurrentFrame(to.Frame(1500))
 
-		executePattern.default()
+		executeEffect.default()
 
 		setTimeout(() => {
 			expectHarmonicStripedTile({ stripeCount: 5, color: TRANSPARENT, diagonalAddress: 0 })
