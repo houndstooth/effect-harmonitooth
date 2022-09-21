@@ -15,7 +15,7 @@ describe('harmonitooth effect', () => {
 		})
 	})
 
-	it('at frame 0, the striped squares have only a single stripe, so are solid', async (done: DoneFn) => {
+	it('at frame 0, the striped squares have only a single stripe, so are solid', (done: DoneFn) => {
 		setAppStateForEffectTests.setCurrentFrame(to.Frame(0))
 
 		executeEffect.default()
@@ -30,7 +30,7 @@ describe('harmonitooth effect', () => {
 		},         0)
 	})
 
-	it('around frame 500, it has two harmonically proportioned stripes', async (done: DoneFn) => {
+	it('around frame 500, it has two harmonically proportioned stripes', (done: DoneFn) => {
 		setAppStateForEffectTests.setCurrentFrame(to.Frame(500))
 
 		executeEffect.default()
@@ -44,7 +44,7 @@ describe('harmonitooth effect', () => {
 		},         0)
 	})
 
-	it('around frame 1000, it has three harmonically proportioned stripes', async (done: DoneFn) => {
+	it('around frame 1000, it has three harmonically proportioned stripes', (done: DoneFn) => {
 		setAppStateForEffectTests.setCurrentFrame(to.Frame(1000))
 
 		executeEffect.default()
@@ -59,7 +59,7 @@ describe('harmonitooth effect', () => {
 		},         0)
 	})
 
-	it('around frame 1250, it has four harmonically proportioned stripes', async (done: DoneFn) => {
+	it('around frame 1250, it has four harmonically proportioned stripes', (done: DoneFn) => {
 		setAppStateForEffectTests.setCurrentFrame(to.Frame(1250))
 
 		executeEffect.default()
@@ -74,7 +74,7 @@ describe('harmonitooth effect', () => {
 		},         0)
 	})
 
-	it('around frame 1500, it has five harmonically proportioned stripes', async (done: DoneFn) => {
+	it('around frame 1500, it has five harmonically proportioned stripes', (done: DoneFn) => {
 		setAppStateForEffectTests.setCurrentFrame(to.Frame(1500))
 
 		executeEffect.default()

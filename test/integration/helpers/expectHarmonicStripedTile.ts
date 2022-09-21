@@ -1,5 +1,6 @@
 import { BLACK, codeUtilities, Color, Coordinate, TRANSPARENT } from '../../../../../src/indexForTest'
 import { pixelIsColorWithMarker } from '../../../../../test'
+
 import harmonicStripeCenter from './harmonicStripeCenter'
 import { ExpectHarmonicStripedTileParams } from './types'
 
